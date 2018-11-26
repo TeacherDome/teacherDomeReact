@@ -27,7 +27,7 @@ class AllStudents extends Component {
 			<h2> Rendering </h2>
 				{this.state.students.map((student, index) => 
 					<section key={index}>
-						<h2>{student.firstName} {student.lastName}</h2>
+						<h2  onClick={() => this.props.changeStudentFirstName(student.firstName)}>{student.firstName} {student.lastName}</h2>
 					</section>
 				)}
 			</section>
