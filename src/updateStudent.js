@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import api from './api'
 
@@ -24,3 +25,4 @@ class updateStudent extends Component {
 }
 
 export default updateStudent
+
