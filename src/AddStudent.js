@@ -12,7 +12,7 @@ class AddStudent extends Component {
 
 	render() {
 		return (<section>
-				<form action="/api/students/addStudent" method="post">
+				<form action="http://localhost:8080/api/students/addStudent" method="POST">
 
 					<label>First Name: <input type="text" name="studentFirstName" placeholder= "Luke" required/></label>
 					<label>Last Name: <input type="text" name="studentLastName" placeholder= "Skywalker" required/></label>
