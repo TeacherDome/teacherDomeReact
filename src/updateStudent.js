@@ -1,15 +1,13 @@
-
 import React, { Component } from 'react'
 import api from './api'
 
-class updateStudent extends Component {
+class UpdateStudent extends Component {
 	constructor(props) {
 		super(props)
 	}
 
 	render() {
-	return ( <section>	
-			<p>AAAHAHAHA</p>
+		return ( <section>	
 				<form action="/api/students/updateStudent" method="post">
 				
 				<lable> First Name:<input type="text" name="StudentFirstName" /></lable>
@@ -24,5 +22,5 @@ class updateStudent extends Component {
 	}
 }
 
-export default updateStudent
+export default UpdateStudent
 

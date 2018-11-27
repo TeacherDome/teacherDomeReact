@@ -4,7 +4,7 @@ import './App.css';
 import AllStudents from './AllStudents'
 import Student from './Student'
 import AddStudent from './AddStudent'
-import updateStudent from './updateStudent'
+import UpdateStudent from './UpdateStudent'
 
 class App extends Component {
     constructor() {
@@ -23,7 +23,7 @@ class App extends Component {
          <AllStudents changeStudentFirstName={this.changeStudentFirstName} changeStudentLastName={this.changeStudentLastName} changeStudentSchoolIdNumber={this.changeStudentSchoolIdNumber}/>
          <Student currentStudentFirstName={this.state.currentStudentFirstName} currentStudentLastName={this.state.currentStudentLastName} currentStudentSchoolIdNumber={this.state.currentStudentSchoolIdNumber} />
         <AddStudent />
-        <updateStudent />
+        <UpdateStudent />
       </div>
     );
   }
