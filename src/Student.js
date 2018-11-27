@@ -15,6 +15,8 @@ class Student extends Component {
 			
 				
 						<p> {this.props.currentStudentFirstName}</p>
+						<p> {this.props.currentStudentLastName}</p>
+						<p> {this.props.currentStudentSchoolIdNumber}</p>
 					
 			</section>
 		)

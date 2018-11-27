@@ -16,10 +16,15 @@ class AllStudents extends Component {
 			this.setState({students: newStudent})
 		})
 	}
+	changeStudentInformation(studentFirstName, studentLastName){
+		this.props.changeStudentFirstName(studentFirstName)
+		this.props.changeStudentLastName(studentLastName)
+	}
 
 	componentDidMount() {
 		this.getStudents()
 	}
+
 
 	render() {
 		console.log(this.state.students)
@@ -27,7 +32,7 @@ class AllStudents extends Component {
 			<h2> Rendering </h2>
 				{this.state.students.map((student, index) => 
 					<section key={index}>
-						<h2  onClick={() => this.props.changeStudentFirstName(student.firstName)}>{student.firstName} {student.lastName}</h2>
+						<h2  onClick={() => this.changeStudentInformation(student.studentFirstName, student.studentLastName)} >{student.studentFirstName} {student.studentLastName}</h2>
 					</section>
 				)}
 			</section>

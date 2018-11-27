@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       currentStudentFirstName: "Bell",
       currentStudentLastName: "Bong",
+      currentStudentSchoolIdNumber: "1",
     }
   }
 
@@ -17,17 +18,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-         <AllStudents changeStudentFirstName={this.changeStudentFirstName}/>
-         <Student currentStudentFirstName={this.state.currentStudentFirstName}/>
+         <AllStudents changeStudentFirstName={this.changeStudentFirstName} changeStudentLastName={this.changeStudentLastName}/>
+         <Student currentStudentFirstName={this.state.currentStudentFirstName} currentStudentLastName={this.state.currentStudentLastName} />
       </div>
     );
   }
-  
 changeStudentFirstName=(currentStudentFirstName)=>{
     this.setState({currentStudentFirstName:[currentStudentFirstName]})
   }
+changeStudentLastName=(currentStudentLastName)=>{
+    this.setState({currentStudentLastName:[currentStudentLastName]})
+  }
+changeStudentSchoolIdNumber=(currentStudentSchoolIdNumber)=>{
+  this.setState({currentStudentSchoolIdNumber: [currentStudentSchoolIdNumber]})
 
 }
+
+  }
 
 
 export default App;
