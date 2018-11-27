@@ -4,7 +4,6 @@ import api from './api'
 
 class updateStudent extends Component {
 	constructor(props) {
-
 		super(props)
 	}
 
