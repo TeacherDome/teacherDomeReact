@@ -9,29 +9,6 @@ class AddStudent extends Component {
 
 
 
-
-// 	addStudent = () =>{
-// 		 addStudentButton.addEventListener('click', function() {
-		
-// 		const xhttp = new XMLHttpRequest()
-		
-// 		// Sets behavior for when the AJAX request is complete
-// 		xhttp.onreadystatechange = function() {
-			
-// 			// Checks the ready state and http status code
-// 			if (this.readyState == 4 && this.status == 200) {
-// 			}
-// 		}
-// 		xhttp.open('POST', `/api/students/addStudents`, true)
-// 		const body = JSON.stringify({
-// 					studentFirstName: this.studentFirstName.value,
-// 					studentLastName: this.studentLastName.value,
-// 					studentSchoolIdNumber: this.studentSchoolIdNumber.value
-				
-// 				})
-// 		xhttp.send(body)
-// 	})
-// }
 addStudent(){
 	var firstName= document.getElementById("firstName").value;
 	var lastName= document.getElementById("lastName").value;
@@ -60,16 +37,21 @@ xhttp.onreadystatechange = function() {
 }
 
 
+	retireStudent = () => {
+			const {showStudent} = this.state;
+			this.setState({ showStudent : !showStudent})
+		}
+
+
 	render() {
 		return (<section>
-
-		
-
 
 					<label>First Name: <input type="text" name="studentFirstName" id="firstName" placeholder= "Luke" required/></label>
 					<label>Last Name: <input type="text" name="studentLastName" id="lastName" placeholder= "Skywalker" required/></label>
 					<label>Student Id: <input type="text" name="studentSchoolIdNumber" id="schoolId" placeholder ="Tatooine" required/></label>
 					<button className="studentSubmit"  onClick={this.addStudent}>Submit</button>
+					<button className="retireStudent" onClick={ this.retireStudent}>Retire Student?</button>
+
 
 			</section>
 		)

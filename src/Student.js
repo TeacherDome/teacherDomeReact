@@ -17,6 +17,7 @@ class Student extends Component {
 						<p> {this.props.currentStudentFirstName}</p>
 						<p> {this.props.currentStudentLastName}</p>
 						<p> {this.props.currentStudentSchoolIdNumber}</p>
+						<input type="checkbox" name="activeStatus" value="changeActiveStatus"/>Make Student Inactive
 					
 			</section>
 		)
