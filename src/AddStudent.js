@@ -37,12 +37,6 @@ xhttp.onreadystatechange = function() {
 }
 
 
-	retireStudent = () => {
-			const {showStudent} = this.state;
-			this.setState({ showStudent : !showStudent})
-		}
-
-
 	render() {
 		return (<section>
 
@@ -50,7 +44,6 @@ xhttp.onreadystatechange = function() {
 					<label>Last Name: <input type="text" name="studentLastName" id="lastName" placeholder= "Skywalker" required/></label>
 					<label>Student Id: <input type="text" name="studentSchoolIdNumber" id="schoolId" placeholder ="Tatooine" required/></label>
 					<button className="studentSubmit"  onClick={this.addStudent}>Submit</button>
-					<button className="retireStudent" onClick={ this.retireStudent}>Retire Student?</button>
 
 
 			</section>

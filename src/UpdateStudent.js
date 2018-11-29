@@ -8,9 +8,9 @@ import api from './api'
 	return ( <section>	
 				<form action="/api/students/updateStudent" method="post">
 				
-				<lable> First Name:<input type="text" name="StudentFirstName" /></lable>
-				<lable> Last Name<input type="text" name="StudentLastName" /></lable>
-				<lable> Student School Id Num<input type="text" name="StudentSchoolIdNumber" /></lable>
+				<label> First Name:<input type="text" name="StudentFirstName" /></label>
+				<label> Last Name<input type="text" name="StudentLastName" /></label>
+				<label> Student School Id Num<input type="text" name="StudentSchoolIdNumber" /></label>
 				<input type="submit" value="Submit" />
 				</form>
 			</section>
