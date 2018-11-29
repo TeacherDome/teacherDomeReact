@@ -4,8 +4,17 @@ import api from './api'
 class Student extends Component {
 	constructor(props) {
 		super(props)
+		this.state={
+			studentRetireCheck: false 
+		}
 	}
 
+
+   toggleCheck=()=>{
+   		if(window.confirm("Are you sure that you would like to retire this student?")){
+   			this.setState({studentRetireCheck:!this.state.studentRetireCheck})
+   			}
+   }
 
 
 
@@ -17,8 +26,8 @@ class Student extends Component {
 						<p> {this.props.currentStudentFirstName}</p>
 						<p> {this.props.currentStudentLastName}</p>
 						<p> {this.props.currentStudentSchoolIdNumber}</p>
-						<input type="checkbox" name="activeStatus" value="changeActiveStatus"/>Make Student Inactive
-					
+						<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
+						<p>Retire Student</p>
 			</section>
 		)
 	}
