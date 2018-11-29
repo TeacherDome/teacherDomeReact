@@ -13,6 +13,7 @@ class App extends Component {
       currentStudentFirstName: "Bell",
       currentStudentLastName: "Bong",
       currentStudentSchoolIdNumber: "1",
+      currentStudentId: "",
     }
   }
 
@@ -20,8 +21,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-         <AllStudents changeStudentFirstName={this.changeStudentFirstName} changeStudentLastName={this.changeStudentLastName} changeStudentSchoolIdNumber={this.changeStudentSchoolIdNumber}/>
-         <Student currentStudentFirstName={this.state.currentStudentFirstName} currentStudentLastName={this.state.currentStudentLastName} currentStudentSchoolIdNumber={this.state.currentStudentSchoolIdNumber} />
+         <AllStudents changeStudentFirstName={this.changeStudentFirstName} changeStudentLastName={this.changeStudentLastName} changeStudentSchoolIdNumber={this.changeStudentSchoolIdNumber} changeStudentId = {this.changeStudentId}/>
+         <Student currentStudentFirstName={this.state.currentStudentFirstName} currentStudentLastName={this.state.currentStudentLastName} currentStudentSchoolIdNumber={this.state.currentStudentSchoolIdNumber} currentStudentId = {this.state.currentStudentId}/>
         <AddStudent />
         <UpdateStudent />
       </div>
@@ -35,9 +36,11 @@ changeStudentLastName=(passedStudentLastName)=>{
   }
 changeStudentSchoolIdNumber=(passedStudentSchoolIdNumber)=>{
   this.setState({currentStudentSchoolIdNumber: [passedStudentSchoolIdNumber]})
-
 }
 
+changeStudentId=(passedStudentId)=>{
+  this.setState({currentStudentId: [passedStudentId]})
+}
   }
 
 
