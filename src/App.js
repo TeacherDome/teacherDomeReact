@@ -27,14 +27,14 @@ class App extends Component {
       </div>
     );
   }
-changeStudentFirstName=(currentStudentFirstName)=>{
-    this.setState({currentStudentFirstName:[currentStudentFirstName]})
+changeStudentFirstName=(passedStudentFirstName)=>{
+    this.setState({currentStudentFirstName:[passedStudentFirstName]})
   }
-changeStudentLastName=(currentStudentLastName)=>{
-    this.setState({currentStudentLastName:[currentStudentLastName]})
+changeStudentLastName=(passedStudentLastName)=>{
+    this.setState({currentStudentLastName:[passedStudentLastName]})
   }
-changeStudentSchoolIdNumber=(currentStudentSchoolIdNumber)=>{
-  this.setState({currentStudentSchoolIdNumber: [currentStudentSchoolIdNumber]})
+changeStudentSchoolIdNumber=(passedStudentSchoolIdNumber)=>{
+  this.setState({currentStudentSchoolIdNumber: [passedStudentSchoolIdNumber]})
 
 }
 
