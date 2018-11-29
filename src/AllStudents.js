@@ -16,10 +16,10 @@ class AllStudents extends Component {
 			this.setState({students: newStudent})
 		})
 	}
-	changeStudentInformation(studentFirstName, studentLastName, studentSchoolIdNumber){
-		this.props.changeStudentFirstName(studentFirstName)
-		this.props.changeStudentLastName(studentLastName)
-		this.props.changeStudentSchoolIdNumber(studentSchoolIdNumber)
+	changeStudentInformation(passedStudentFirstName, passedStudentLastName, passedStudentSchoolIdNumber){
+		this.props.changeStudentFirstName(passedStudentFirstName)
+		this.props.changeStudentLastName(passedStudentLastName)
+		this.props.changeStudentSchoolIdNumber(passedStudentSchoolIdNumber)
 	}
 
 	componentDidMount() {
