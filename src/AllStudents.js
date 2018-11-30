@@ -14,15 +14,16 @@ class AllStudents extends Component {
 	getStudents = () => {
 		api(`http://localhost:8080/api/students`).then(students => {
 			const newStudent = this.state.students
-			students.forEach(student => newStudent.push(student))
+			students.forEach(student => {
+				console.log(student.studentIsRetired)
+				if (!student.studentIsRetired){
+				newStudent.push(student)}})
 			this.setState({students: newStudent})
 		})
 	}
-	changeStudentInformation(passedStudentFirstName, passedStudentLastName, passedStudentSchoolIdNumber, passedStudentId){
-		this.props.changeStudentFirstName(passedStudentFirstName)
-		this.props.changeStudentLastName(passedStudentLastName)
-		this.props.changeStudentSchoolIdNumber(passedStudentSchoolIdNumber)
-		this.props.changeStudentId(passedStudentId)
+	changeStudentInformation(passedStudent){
+		this.props.changeStudent(passedStudent)
+		
 	}
 
 	componentDidMount() {
@@ -32,20 +33,15 @@ class AllStudents extends Component {
 
 	render() {
 		console.log(this.state.students)
-		return (
-			<section class="class-list">
-				<h2> Rendering </h2>
-					{this.state.students.map((student, index) => 
-						<h2 key={index} class="studentInList" onClick={() => 
-							this.changeStudentInformation(
-								student.studentFirstName, 
-								student.studentLastName, 
-								student.studentSchoolIdNumber, 
-								student.studentId)} >
-							{student.studentFirstName} {student.studentLastName}
-						</h2>
-					)}
-				<AddStudent />
+		
+		return (<section class="class-list">
+			<h2> Class List </h2>
+				{this.state.students.map((student, index) => 
+					<section key={index}>
+						<h2  onClick={() => this.changeStudentInformation(student)} >{student.studentFirstName} {student.studentLastName}</h2>
+					</section>
+				)}
+
 			</section>
 		)
 	}

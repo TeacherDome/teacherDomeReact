@@ -9,10 +9,33 @@ class Student extends Component {
 		}
 	}
 
+submitRetiredStudent() {
+	var xhttp = new XMLHttpRequest()
+	var studentIdToRetire = this.props.currentStudent.studentId;
+	var url = '/api/students/retireStudent';
+
+	xhttp.onreadystatechange = function() {
+		if(this.readState == 4 && this.status == 200) {
+
+		}
+	
+}
+
+xhttp.open('POST', url, true)
+	const body = JSON.stringify({
+
+		studentId: studentIdToRetire
+
+	})
+
+	xhttp.send(body)
+}
+
 
    toggleCheck=()=>{
    		if(window.confirm("Are you sure that you would like to retire this student?")){
    			this.setState({studentRetireCheck:!this.state.studentRetireCheck})
+   			this.submitRetiredStudent()
    			}
    }
 
@@ -21,9 +44,13 @@ class Student extends Component {
 
 	render() {
 		return (<section class="viewed-student">
-					<h1> {this.props.currentStudentFirstName} {this.props.currentStudentLastName}</h1>
-					<p>School ID: {this.props.currentStudentSchoolIdNumber}</p>
-					<label>Retire Student<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input></label>
+			
+				
+						<p> {this.props.currentStudent.studentFirstName}</p>
+						<p> {this.props.currentStudent.studentLastName}</p>
+				
+						<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
+						<p>Retire Student</p>
 			</section>
 		)
 	}

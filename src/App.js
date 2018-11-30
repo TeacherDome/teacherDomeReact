@@ -9,10 +9,12 @@ class App extends Component {
     constructor() {
     super()
     this.state = {
-      currentStudentFirstName: "Bell",
-      currentStudentLastName: "Bong",
-      currentStudentSchoolIdNumber: "1",
-      currentStudentId: "",
+      currentStudent:{
+        currentStudentFirstName: "Bell",
+        currentStudentLastName: "Bong",
+        currentStudentSchoolIdNumber: "1",
+        currentStudentId: "",
+      }
     }
   }
 
@@ -21,39 +23,24 @@ class App extends Component {
     return (
       <div className="App">
         <div id="container">
-          <AllStudents 
-            changeStudentFirstName = {this.changeStudentFirstName} 
-            changeStudentLastName = {this.changeStudentLastName} 
-            changeStudentSchoolIdNumber = {this.changeStudentSchoolIdNumber} 
-            changeStudentId = {this.changeStudentId}
-          />
+          <AllStudents changeStudent={this.changeStudent} />
           <section id="current-student">
-            <Student
-              currentStudentFirstName = {this.state.currentStudentFirstName}
-              currentStudentLastName = {this.state.currentStudentLastName}
-              currentStudentSchoolIdNumber = {this.state.currentStudentSchoolIdNumber}
-              currentStudentId = {this.state.currentStudentId}
-            />
-            <UpdateStudent />
+             <Student currentStudent={this.state.currentStudent} />
+             <UpdateStudent />
           </section>
+      
         </div>
+
       </div>
     );
   }
-changeStudentFirstName=(passedStudentFirstName)=>{
-    this.setState({currentStudentFirstName:[passedStudentFirstName]})
-  }
-changeStudentLastName=(passedStudentLastName)=>{
-    this.setState({currentStudentLastName:[passedStudentLastName]})
-  }
-changeStudentSchoolIdNumber=(passedStudentSchoolIdNumber)=>{
-  this.setState({currentStudentSchoolIdNumber: [passedStudentSchoolIdNumber]})
-}
 
-changeStudentId=(passedStudentId)=>{
-  this.setState({currentStudentId: [passedStudentId]})
-}
-  }
 
+changeStudent=(passedStudent)=>{
+  this.setState({currentStudent:passedStudent})
+
+
+  }
+}
 
 export default App;
