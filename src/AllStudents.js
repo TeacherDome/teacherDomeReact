@@ -37,10 +37,11 @@ class AllStudents extends Component {
 		return (<section class="class-list">
 			<h2> Class List </h2>
 				{this.state.students.map((student, index) => 
-					<section key={index}>
+					<section class="studentInList" key={index}>
 						<h2  onClick={() => this.changeStudentInformation(student)} >{student.studentFirstName} {student.studentLastName}</h2>
 					</section>
 				)}
+			<AddStudent />
 
 			</section>
 		)
