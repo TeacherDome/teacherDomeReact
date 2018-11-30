@@ -43,7 +43,7 @@ xhttp.open('POST', url, true)
 
 
 	render() {
-		return (<section>
+		return (<section class="viewed-student">
 			
 				
 						<p> {this.props.currentStudent.studentFirstName}</p>

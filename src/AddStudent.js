@@ -7,8 +7,6 @@ class AddStudent extends Component {
 		super(props)
 	}
 
-
-
 addStudent(){
 	var firstName= document.getElementById("firstName").value;
 	var lastName= document.getElementById("lastName").value;
@@ -28,14 +26,10 @@ xhttp.onreadystatechange = function() {
 					studentFirstName: firstName,
 					studentLastName: lastName,
 					studentSchoolIdNumber: schoolId
-
-				
 				})
 		console.log(body)
 		xhttp.send(body)
-
 }
-
 
 	render() {
 		return (<section>
