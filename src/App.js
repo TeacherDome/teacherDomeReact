@@ -21,7 +21,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-         <AllStudents changeStudentFirstName={this.changeStudentFirstName} changeStudentLastName={this.changeStudentLastName} changeStudentSchoolIdNumber={this.changeStudentSchoolIdNumber} changeStudentId = {this.changeStudentId}/>
+         <AllStudents 
+           changeStudentFirstName = {this.changeStudentFirstName} 
+           changeStudentLastName = {this.changeStudentLastName} 
+           changeStudentSchoolIdNumber = {this.changeStudentSchoolIdNumber} 
+           changeStudentId = {this.changeStudentId}
+         />
          <Student currentStudentFirstName={this.state.currentStudentFirstName} currentStudentLastName={this.state.currentStudentLastName} currentStudentSchoolIdNumber={this.state.currentStudentSchoolIdNumber} currentStudentId = {this.state.currentStudentId}/>
         <AddStudent />
         <UpdateStudent />
