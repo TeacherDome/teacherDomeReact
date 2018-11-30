@@ -37,7 +37,6 @@ changeStudentLastName=(passedStudentLastName)=>{
 changeStudentSchoolIdNumber=(passedStudentSchoolIdNumber)=>{
   this.setState({currentStudentSchoolIdNumber: [passedStudentSchoolIdNumber]})
 }
-
 changeStudentId=(passedStudentId)=>{
   this.setState({currentStudentId: [passedStudentId]})
 }
