@@ -16,11 +16,9 @@ class AllStudents extends Component {
 			this.setState({students: newStudent})
 		})
 	}
-	changeStudentInformation(passedStudentFirstName, passedStudentLastName, passedStudentSchoolIdNumber, passedStudentId){
-		this.props.changeStudentFirstName(passedStudentFirstName)
-		this.props.changeStudentLastName(passedStudentLastName)
-		this.props.changeStudentSchoolIdNumber(passedStudentSchoolIdNumber)
-		this.props.changeStudentId(passedStudentId)
+	changeStudentInformation(passedStudent){
+		this.props.changeStudent(passedStudent)
+		
 	}
 
 	componentDidMount() {
@@ -34,7 +32,7 @@ class AllStudents extends Component {
 			<h2> Rendering </h2>
 				{this.state.students.map((student, index) => 
 					<section key={index}>
-						<h2  onClick={() => this.changeStudentInformation(student.studentFirstName, student.studentLastName, student.studentSchoolIdNumber, student.studentId)} >{student.studentFirstName} {student.studentLastName}</h2>
+						<h2  onClick={() => this.changeStudentInformation(student)} >{student.studentFirstName} {student.studentLastName}</h2>
 					</section>
 				)}
 			</section>

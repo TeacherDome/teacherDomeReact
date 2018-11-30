@@ -10,10 +10,12 @@ class App extends Component {
     constructor() {
     super()
     this.state = {
-      currentStudentFirstName: "Bell",
-      currentStudentLastName: "Bong",
-      currentStudentSchoolIdNumber: "1",
-      currentStudentId: "",
+      currentStudent:{
+        currentStudentFirstName: "Bell",
+        currentStudentLastName: "Bong",
+        currentStudentSchoolIdNumber: "1",
+        currentStudentId: "",
+      }
     }
   }
 
@@ -21,26 +23,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-         <AllStudents changeStudentFirstName={this.changeStudentFirstName} changeStudentLastName={this.changeStudentLastName} changeStudentSchoolIdNumber={this.changeStudentSchoolIdNumber} changeStudentId = {this.changeStudentId}/>
-         <Student currentStudentFirstName={this.state.currentStudentFirstName} currentStudentLastName={this.state.currentStudentLastName} currentStudentSchoolIdNumber={this.state.currentStudentSchoolIdNumber} currentStudentId = {this.state.currentStudentId}/>
+         <AllStudents changeStudent={this.changeStudent} />
+         <Student currentStudent={this.state.currentStudent} />
         <AddStudent />
         <UpdateStudent />
       </div>
     );
   }
-changeStudentFirstName=(passedStudentFirstName)=>{
-    this.setState({currentStudentFirstName:[passedStudentFirstName]})
-  }
-changeStudentLastName=(passedStudentLastName)=>{
-    this.setState({currentStudentLastName:[passedStudentLastName]})
-  }
-changeStudentSchoolIdNumber=(passedStudentSchoolIdNumber)=>{
-  this.setState({currentStudentSchoolIdNumber: [passedStudentSchoolIdNumber]})
+
+changeStudent=(passedStudent)=>{
+  this.setState({currentStudent:passedStudent})
 }
 
-changeStudentId=(passedStudentId)=>{
-  this.setState({currentStudentId: [passedStudentId]})
-}
   }
 
 
