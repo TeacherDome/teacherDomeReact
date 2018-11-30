@@ -12,7 +12,10 @@ class AllStudents extends Component {
 	getStudents = () => {
 		api(`http://localhost:8080/api/students`).then(students => {
 			const newStudent = this.state.students
-			students.forEach(student => newStudent.push(student))
+			students.forEach(student => {
+				console.log(student.studentIsRetired)
+				if (!student.studentIsRetired){
+				newStudent.push(student)}})
 			this.setState({students: newStudent})
 		})
 	}
@@ -29,7 +32,7 @@ class AllStudents extends Component {
 	render() {
 		console.log(this.state.students)
 		return (<section>
-			<h2> Rendering </h2>
+			<h2> Class List </h2>
 				{this.state.students.map((student, index) => 
 					<section key={index}>
 						<h2  onClick={() => this.changeStudentInformation(student)} >{student.studentFirstName} {student.studentLastName}</h2>

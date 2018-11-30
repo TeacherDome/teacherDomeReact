@@ -31,11 +31,12 @@ class App extends Component {
     );
   }
 
+
 changeStudent=(passedStudent)=>{
   this.setState({currentStudent:passedStudent})
-}
+
 
   }
-
+}
 
 export default App;
