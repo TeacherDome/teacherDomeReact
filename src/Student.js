@@ -43,14 +43,12 @@ xhttp.open('POST', url, true)
 
 
 	render() {
-		return (<section class="viewed-student">
-			
+		return (<section>
+				<p class="name"> {this.props.currentStudent.studentFirstName}</p>
+				<p class="name"> {this.props.currentStudent.studentLastName}</p>
 				
-						<p> {this.props.currentStudent.studentFirstName}</p>
-						<p> {this.props.currentStudent.studentLastName}</p>
-				
-						<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
-						<p>Retire Student</p>
+				<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
+				<p>Retire Student</p>
 			</section>
 		)
 	}
