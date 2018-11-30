@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import AllStudents from './AllStudents'
 import Student from './Student'
-import AddStudent from './AddStudent'
 import UpdateStudent from './UpdateStudent'
 
 class App extends Component {
@@ -21,15 +20,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-         <AllStudents 
-           changeStudentFirstName = {this.changeStudentFirstName} 
-           changeStudentLastName = {this.changeStudentLastName} 
-           changeStudentSchoolIdNumber = {this.changeStudentSchoolIdNumber} 
-           changeStudentId = {this.changeStudentId}
-         />
-         <Student currentStudentFirstName={this.state.currentStudentFirstName} currentStudentLastName={this.state.currentStudentLastName} currentStudentSchoolIdNumber={this.state.currentStudentSchoolIdNumber} currentStudentId = {this.state.currentStudentId}/>
-        <AddStudent />
-        <UpdateStudent />
+        <div id="container">
+          <AllStudents 
+            changeStudentFirstName = {this.changeStudentFirstName} 
+            changeStudentLastName = {this.changeStudentLastName} 
+            changeStudentSchoolIdNumber = {this.changeStudentSchoolIdNumber} 
+            changeStudentId = {this.changeStudentId}
+          />
+          <section id="current-student">
+            <Student
+              currentStudentFirstName = {this.state.currentStudentFirstName}
+              currentStudentLastName = {this.state.currentStudentLastName}
+              currentStudentSchoolIdNumber = {this.state.currentStudentSchoolIdNumber}
+              currentStudentId = {this.state.currentStudentId}
+            />
+            <UpdateStudent />
+          </section>
+        </div>
       </div>
     );
   }

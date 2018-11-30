@@ -5,7 +5,7 @@ import api from './api'
 		super(props)
 	}
  	render() {
-	return ( <section>	
+	return ( <section class="update-student">	
 				<form action="/api/students/updateStudent" method="post">
 				
 				<label> First Name:<input type="text" name="StudentFirstName" /></label>

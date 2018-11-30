@@ -20,11 +20,10 @@ class Student extends Component {
 
 
 	render() {
-		return (<section>
-					<p> {this.props.currentStudentFirstName} {this.props.currentStudentLastName}</p>
+		return (<section class="viewed-student">
+					<h1> {this.props.currentStudentFirstName} {this.props.currentStudentLastName}</h1>
 					<p>School ID: {this.props.currentStudentSchoolIdNumber}</p>
-					<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
-					<p>Retire Student</p>
+					<label>Retire Student<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input></label>
 			</section>
 		)
 	}
