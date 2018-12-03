@@ -9,22 +9,35 @@ class Student extends Component {
 		}
 	}
 
-	submitRetiredStudent() {
-		var xhttp = new XMLHttpRequest()
-		var studentIdToRetire = this.props.currentStudent.studentId
-		var url = '/api/students/retireStudent'
+	updateAllStudents = response => {
+		this.props.updateStudents(response)
+	}
 
-		xhttp.onreadystatechange = function() {
-			if (this.readState === 4 && this.status === 200) {
-			}
-		}
-
-		xhttp.open('POST', url, true)
-		const body = JSON.stringify({
-			studentId: studentIdToRetire
+	submitRetiredStudent = () =>{
+		fetch('/api/students/retireStudent', {
+			method: 'post',
+			body: JSON.stringify({
+				studentId: this.props.currentStudent.studentId
+			})
 		})
+			.then(res => res.json())
+			.then(students => this.updateAllStudents(students))
+	
+		// var xhttp = new XMLHttpRequest()
+		// var studentIdToRetire = this.props.currentStudent.studentId
+		// var url = '/api/students/retireStudent'
 
-		xhttp.send(body)
+		// xhttp.onreadystatechange = function() {
+		// 	if (this.readState === 4 && this.status === 200) {
+		// 	}
+		// }
+
+		// xhttp.open('POST', url, true)
+		// const body = JSON.stringify({
+		// 	studentId: studentIdToRetire
+		// })
+
+		// xhttp.send(body)
 	}
 
 	toggleCheck = () => {

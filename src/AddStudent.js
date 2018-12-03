@@ -63,6 +63,8 @@ class AddStudent extends Component {
 						id="lastName"
 						placeholder="Skywalker"
 						required
+						value={this.state.lastName}
+						onChange={this.updateLastName}
 					/>
 				</label>
 				<label>
@@ -73,6 +75,8 @@ class AddStudent extends Component {
 						id="schoolId"
 						placeholder="Tatooine"
 						required
+						value={this.state.schoolId}
+						onChange={this.updateSchoolId}
 					/>
 				</label>
 				<button className="studentSubmit" onClick={this.addStudent}>

@@ -6,6 +6,8 @@ import Student from './Student'
 class App extends Component {
 	constructor() {
 		super()
+    this.state = {
+      students: []}
 		this.state = {
 			currentStudent: {
 				currentStudentFirstName: 'Bell',
@@ -16,11 +18,16 @@ class App extends Component {
 		}
 	}
 
+  updateStudents = newStudents => {
+    this.setState({ students: newStudents })
+  }
+
 	render() {
 		return (
 			<div className="App">
 				<AllStudents changeStudent={this.changeStudent} />
-				<Student currentStudent={this.state.currentStudent} />
+				<Student updateStudents = {this.updateStudents} currentStudent={this.state.currentStudent} />
+
 			</div>
 		)
 	}
