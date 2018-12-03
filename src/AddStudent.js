@@ -7,6 +7,10 @@ class AddStudent extends Component {
 		super(props)
 	}
 
+updateAllStudents = (response) =>{
+	this.props.updateStudents(response)
+}
+
 addStudent(){
 	var firstName= document.getElementById("firstName").value;
 	var lastName= document.getElementById("lastName").value;
@@ -17,7 +21,7 @@ addStudent(){
 xhttp.onreadystatechange = function() {
 	// Checks the ready state and http status code
 	if (this.readyState == 4 && this.status == 200) {
-		
+		this.updateAllStudents(xhttp.response)
 	}
 }
 

@@ -26,6 +26,11 @@ class AllStudents extends Component {
 		
 	}
 
+		updateStudents(newStudents){
+		this.setState({students:this.newStudent});
+	}
+
+
 	componentDidMount() {
 		this.getStudents()
 	}
@@ -41,7 +46,7 @@ class AllStudents extends Component {
 						<h2  onClick={() => this.changeStudentInformation(student)} >{student.studentFirstName} {student.studentLastName}</h2>
 					</section>
 				)}
-			<AddStudent />
+			<AddStudent updateStudents={this.updateStudents}/>
 
 			</section>
 		)

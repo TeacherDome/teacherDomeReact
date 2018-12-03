@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import AllStudents from './AllStudents'
 import Student from './Student'
-import AddStudent from './AddStudent'
 
 
 
@@ -23,10 +22,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
          <AllStudents changeStudent={this.changeStudent} />
          <Student currentStudent={this.state.currentStudent} />
-         <AddStudent />
 
       </div>
     );
