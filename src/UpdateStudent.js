@@ -43,7 +43,7 @@ xhttp.open('POST', url, true)
 // }
 
 	render() {
-return ( <section>	
+return ( <section class="update-student">	
 
 			<p id="UpdateStudentId" >{this.props.studentId}</p>
 			<label> First Name:<input type="text" name="StudentFirstName" id="StudentFirstName" /></label>

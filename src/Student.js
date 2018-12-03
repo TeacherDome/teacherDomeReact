@@ -46,8 +46,8 @@ xhttp.open('POST', url, true)
 	render() {
 		return (<section id="studentSection" key={this.props.currentStudent.studentId}>
 			
-						<p> {this.props.currentStudent.studentFirstName}</p>
-						<p> {this.props.currentStudent.studentLastName}</p>
+						<p class="name"> {this.props.currentStudent.studentFirstName}</p>
+						<p class="name"> {this.props.currentStudent.studentLastName}</p>
 				
 						<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
 						<p>Retire Student</p>

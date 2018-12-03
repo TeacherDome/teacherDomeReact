@@ -36,7 +36,7 @@ xhttp.onreadystatechange = function() {
 }
 
 	render() {
-		return (<section>
+		return (<section class="add-student">
 
 					<label>First Name: <input type="text" name="studentFirstName" id="firstName" placeholder= "Luke" required/></label>
 					<label>Last Name: <input type="text" name="studentLastName" id="lastName" placeholder= "Skywalker" required/></label>
