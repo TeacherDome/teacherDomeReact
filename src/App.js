@@ -29,7 +29,7 @@ class App extends Component {
 				<AllStudents changeStudent={this.changeStudent} />
 				<Student updateStudents = {this.updateStudents} currentStudent={this.state.currentStudent} />
           <section id="current-student">
-             <Student currentStudent={this.state.currentStudent} />
+             // <Student currentStudent={this.state.currentStudent} />
              <UpdateStudent />
           </section>
 			</div>
