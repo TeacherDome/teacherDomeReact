@@ -39,7 +39,7 @@ class UpdateStudent extends Component {
 
 	render() {
 		return (
-			<section>
+			<section class="update-student">
 				<p id="UpdateStudentId">{this.props.studentId}</p>
 				<label>
 					{' '}

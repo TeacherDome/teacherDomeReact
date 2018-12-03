@@ -45,3 +45,4 @@ class MathChart extends Component{
 }
 
 export default MathChart
+
