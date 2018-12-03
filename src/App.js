@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import AllStudents from './AllStudents'
 import Student from './Student'
-
+import UpdateStudent from './UpdateStudent'
 
 class App extends Component {
 	constructor() {

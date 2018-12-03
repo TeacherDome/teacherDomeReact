@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
 import api from './api'
 import MathChart from './MathChart'
-=======
 import UpdateStudent from './UpdateStudent'
->>>>>>> master
 
 class Student extends Component {
 	constructor(props) {
