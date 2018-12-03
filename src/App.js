@@ -1,40 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import AllStudents from './AllStudents'
 import Student from './Student'
 
-
-
 class App extends Component {
-    constructor() {
-    super()
+	constructor() {
+		super()
     this.state = {
-      currentStudent:{
-        currentStudentFirstName: "Bell",
-        currentStudentLastName: "Bong",
-        currentStudentSchoolIdNumber: "1",
-        currentStudentId: "",
-      }
-    }
+      students: []}
+		this.state = {
+			currentStudent: {
+				currentStudentFirstName: 'Bell',
+				currentStudentLastName: 'Bong',
+				currentStudentSchoolIdNumber: '1',
+				currentStudentId: ''
+			}
+		}
+	}
+
+  updateStudents = newStudents => {
+    this.setState({ students: newStudents })
   }
 
-  render() {
-    return (
-      <div className="App">
-         <AllStudents changeStudent={this.changeStudent} />
-         <Student currentStudent={this.state.currentStudent} />
+	render() {
+		return (
+			<div className="App">
+				<AllStudents changeStudent={this.changeStudent} />
+				<Student updateStudents = {this.updateStudents} currentStudent={this.state.currentStudent} />
 
-      </div>
-    );
-  }
+			</div>
+		)
+	}
 
-
-changeStudent=(passedStudent)=>{
-  this.setState({currentStudent:passedStudent})
-
-
-  }
+	changeStudent = passedStudent => {
+		this.setState({ currentStudent: passedStudent })
+	}
 }
 
-export default App;
+export default App
