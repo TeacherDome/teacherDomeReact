@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import api from './api'
+
 const addStudentButton = document.querySelector('button');
 
 class AddStudent extends Component {
 	constructor(props) {
 		super(props)
+
 	}
+
+updateAllStudents = (response) =>{
+	this.props.updateStudents(response)
+}
 
 addStudent(){
 	var firstName= document.getElementById("firstName").value;
@@ -17,7 +23,7 @@ addStudent(){
 xhttp.onreadystatechange = function() {
 	// Checks the ready state and http status code
 	if (this.readyState == 4 && this.status == 200) {
-		
+		this.updateAllStudents(xhttp.response)
 	}
 }
 
@@ -29,6 +35,8 @@ xhttp.onreadystatechange = function() {
 				})
 		console.log(body)
 		xhttp.send(body)
+
+
 }
 
 	render() {
