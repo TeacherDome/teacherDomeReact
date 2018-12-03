@@ -10,15 +10,13 @@ class MathChart extends Component{
 				labels:["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
 				datasets:[{
 		            label: '# of hecks I give',
-		            data: [12, 19, 3, 5, 2, 3],
+		            data: [122, 129, 23, 522, 122, 322],
 		            backgroundColor: [
 		                'rgba(54, 162, 235, 0.2)',
 		            ],
 		            borderColor: [
 		                'rgba(54, 162, 235, 1)',
 		            ],
-		            
-
 
 				}]
 			}
@@ -34,7 +32,11 @@ class MathChart extends Component{
    					data={this.state.chartData}
    					width={400}
    					options={{
-   						maintainAspectRatio: false
+   						title: {
+	   						display:true,
+	   						text:'Math Scores',
+	   						fontSize:45
+   						}
    					}}
    				/>
    			</div>
