@@ -28,10 +28,8 @@ class App extends Component {
 			<div className="App">
 				<AllStudents changeStudent={this.changeStudent} />
 				<Student updateStudents = {this.updateStudents} currentStudent={this.state.currentStudent} />
-          <section id="current-student">
-             // <Student currentStudent={this.state.currentStudent} />
-             <UpdateStudent />
-          </section>
+                    
+
 			</div>
 		)
 	}

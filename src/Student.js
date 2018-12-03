@@ -61,8 +61,8 @@ class Student extends Component {
 				id="studentSection"
 				key={this.props.currentStudent.studentId}
 			>
-				<p> {this.props.currentStudent.studentFirstName}</p>
-				<p> {this.props.currentStudent.studentLastName}</p>
+				<p class="name"> {this.props.currentStudent.studentFirstName}</p>
+				<p class="name"> {this.props.currentStudent.studentLastName}</p>
 				<MathChart />
 				<input
 					type="checkbox"
