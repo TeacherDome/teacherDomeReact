@@ -4,7 +4,7 @@ import './App.css';
 import AllStudents from './AllStudents'
 import Student from './Student'
 import UpdateStudent from './UpdateStudent'
-import MathChart from './MathChart'
+
 
 class App extends Component {
     constructor() {
@@ -27,7 +27,7 @@ class App extends Component {
           <AllStudents changeStudent={this.changeStudent} />
           <section id="current-student">
              <Student currentStudent={this.state.currentStudent} />
-             <MathChart />
+             
              <UpdateStudent />
           </section>
       

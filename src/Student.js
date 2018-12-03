@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import api from './api'
+import MathChart from './MathChart'
 
 class Student extends Component {
 	constructor(props) {
@@ -46,7 +47,7 @@ xhttp.open('POST', url, true)
 		return (<section>
 				<p class="name"> {this.props.currentStudent.studentFirstName}</p>
 				<p class="name"> {this.props.currentStudent.studentLastName}</p>
-				
+				<MathChart />
 				<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
 				<p>Retire Student</p>
 			</section>
