@@ -4,7 +4,7 @@ import './App.css';
 import AllStudents from './AllStudents'
 import Student from './Student'
 import AddStudent from './AddStudent'
-import UpdateStudent from './UpdateStudent'
+
 
 class App extends Component {
     constructor() {
@@ -19,14 +19,13 @@ class App extends Component {
     }
   }
 
-
   render() {
     return (
       <div className="App">
          <AllStudents changeStudent={this.changeStudent} />
          <Student currentStudent={this.state.currentStudent} />
-        <AddStudent />
-        <UpdateStudent />
+         <AddStudent />
+         
       </div>
     );
   }
