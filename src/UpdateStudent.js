@@ -19,6 +19,7 @@ xhttp.onreadystatechange = function() {
 // Checks the ready state and http status code
 if (this.readyState == 4 && this.status == 200) {
 	
+
 	}
 }
 

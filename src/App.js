@@ -6,6 +6,7 @@ import Student from './Student'
 import AddStudent from './AddStudent'
 
 
+
 class App extends Component {
     constructor() {
     super()
@@ -22,10 +23,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
          <AllStudents changeStudent={this.changeStudent} />
          <Student currentStudent={this.state.currentStudent} />
          <AddStudent />
-         
+
       </div>
     );
   }

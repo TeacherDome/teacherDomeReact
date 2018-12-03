@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import api from './api'
+import AddStudent from './AddStudent'
+
 
 class AllStudents extends Component {
 	constructor(props) {
@@ -31,13 +33,16 @@ class AllStudents extends Component {
 
 	render() {
 		console.log(this.state.students)
-		return (<section>
+		
+		return (<section class="class-list">
 			<h2> Class List </h2>
 				{this.state.students.map((student, index) => 
-					<section key={index}>
+					<section class="studentInList" key={index}>
 						<h2  onClick={() => this.changeStudentInformation(student)} >{student.studentFirstName} {student.studentLastName}</h2>
 					</section>
 				)}
+			<AddStudent />
+
 			</section>
 		)
 	}
