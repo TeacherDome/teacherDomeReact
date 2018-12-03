@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import api from './api'
+import UpdateStudent from './UpdateStudent'
 
 class Student extends Component {
 	constructor(props) {
@@ -43,12 +44,14 @@ xhttp.open('POST', url, true)
 
 
 	render() {
-		return (<section>
-				<p class="name"> {this.props.currentStudent.studentFirstName}</p>
-				<p class="name"> {this.props.currentStudent.studentLastName}</p>
+		return (<section id="studentSection" key={this.props.currentStudent.studentId}>
+			
+						<p> {this.props.currentStudent.studentFirstName}</p>
+						<p> {this.props.currentStudent.studentLastName}</p>
 				
-				<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
-				<p>Retire Student</p>
+						<input type="checkbox" id="checkboxChoice" checked={this.state.studentRetireCheck} onChange={this.toggleCheck}></input>
+						<p>Retire Student</p>
+						<UpdateStudent studentId={this.props.currentStudent.studentId} />
 			</section>
 		)
 	}
