@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import api from './api'
 import MathChart from './MathChart'
 import UpdateStudent from './UpdateStudent'
+import ReadingChart from './ReadingChart'
 
 class Student extends Component {
 	constructor(props) {
@@ -64,6 +65,7 @@ class Student extends Component {
 				<p class="name"> {this.props.currentStudent.studentFirstName}</p>
 				<p class="name"> {this.props.currentStudent.studentLastName}</p>
 				<MathChart />
+				<ReadingChart />
 				<input
 					type="checkbox"
 					id="checkboxChoice"
