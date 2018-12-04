@@ -19,3 +19,4 @@ render() {
 	}
 
 }
+export default TeacherResourcesPage
