@@ -7,12 +7,42 @@ class Student extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			studentRetireCheck: false
+			studentRetireCheck: false,
+			firstName: '',
+			lastName: '',
+			schoolId: '',
+		defaultStudent: {
+			defaultStudentFirstName: '',
+			defaultStudentLastName: '',
+			defaultStudentSchoolIdNumber: '',
+			defaultStudentId: ''
+			}
 		}
 	}
 
 	updateAllStudents = response => {
 		this.props.updateStudents(response)
+	}
+
+	updateCurrentStudent = response => {
+		this.props.changeStudent(response)
+	}
+
+	defaultCurrentStudent = () => {
+		this.props.changeStudent(this.state.defaultStudent)
+	}
+
+
+
+	checkCurrentStudent = () =>{
+		fetch('/api/student', {
+			method: 'post',
+			body: JSON.stringify({
+				studentId: this.props.currentStudent.studentId
+			})
+		})
+			.then(res => res.json())
+			.then(students => this.updateCurrentStudent(students))
 	}
 
 	submitRetiredStudent = () =>{
@@ -24,6 +54,7 @@ class Student extends Component {
 		})
 			.then(res => res.json())
 			.then(students => this.updateAllStudents(students))
+			this.defaultCurrentStudent()
 	
 		// var xhttp = new XMLHttpRequest()
 		// var studentIdToRetire = this.props.currentStudent.studentId
@@ -52,6 +83,7 @@ class Student extends Component {
 				studentRetireCheck: !this.state.studentRetireCheck
 			})
 			this.submitRetiredStudent()
+			
 		}
 	}
 
@@ -73,6 +105,8 @@ class Student extends Component {
 				<p>Retire Student</p>
 				<UpdateStudent
 					studentId={this.props.currentStudent.studentId}
+					updateStudents={this.props.updateStudents}
+					checkCurrentStudent={this.checkCurrentStudent}
 				/>
 			</section>
 		)

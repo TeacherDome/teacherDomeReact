@@ -4,10 +4,6 @@ class AddStudent extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			firstName: '',
-			lastName: '',
-			schoolId: '',
-			students: []
 		}
 	}
 
