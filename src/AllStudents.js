@@ -5,14 +5,11 @@ import AddStudent from './AddStudent'
 class AllStudents extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {
-			students: []
-		}
 	}
 
 	getStudents = () => {
 		api(`http://localhost:8080/api/students`).then(students => {
-			const newStudent = this.state.students
+			const newStudent = this.props.allStudents
 			students.forEach(student => {
 				console.log(student.studentIsRetired)
 				if (!student.studentIsRetired) {
@@ -26,21 +23,16 @@ class AllStudents extends Component {
 		this.props.changeStudent(passedStudent)
 	}
 
-	updateStudents = newStudents => {
-		this.setState({ students: newStudents })
-	}
-
 	componentDidMount() {
 		this.getStudents()
 	}
 
 	render() {
-		console.log(this.state.students)
 
 		return (
 			<section className="class-list">
 				<h2> Class List </h2>
-				{this.state.students.map((student, index) => (
+				{this.props.allStudents.map((student, index) => (
 					<section className="studentInList" key={index}>
 						<h2
 							onClick={() =>
@@ -51,7 +43,7 @@ class AllStudents extends Component {
 						</h2>
 					</section>
 				))}
-				<AddStudent updateStudents={this.updateStudents} />
+				<AddStudent updateStudents={this.props.updateStudents} />
 			</section>
 		)
 	}
