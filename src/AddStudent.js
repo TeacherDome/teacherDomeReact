@@ -7,8 +7,14 @@ class AddStudent extends Component {
 		}
 	}
 
+	onClick=()=>{
+		this.addStudent();
+		this.clearFields();
+	}
+
 	updateAllStudents = response => {
 		this.props.updateStudents(response)
+
 	}
 
 	updateFirstName = event => {
@@ -23,6 +29,11 @@ class AddStudent extends Component {
 		this.setState({ schoolId: event.target.value })
 	}
 
+	clearFields=()=>{
+		this.state.firstName = ''
+		this.state.lastName = ''
+		this.state.schoolId = ''
+	}
 	addStudent = () => {
 		fetch('/api/students/addStudent', {
 			method: 'post',
@@ -44,7 +55,7 @@ class AddStudent extends Component {
 					<input
 						type="text"
 						name="studentFirstName"
-						id="firstName"
+						id="firsNtame"
 						placeholder="Luke"
 						required
 						value={this.state.firstName}
@@ -75,7 +86,7 @@ class AddStudent extends Component {
 						onChange={this.updateSchoolId}
 					/>
 				</label>
-				<button className="studentSubmit" onClick={this.addStudent}>
+				<button className="studentSubmit" onClick={this.onClick}>
 					Submit
 				</button>
 			</section>

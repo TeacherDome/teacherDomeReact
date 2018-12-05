@@ -18,7 +18,29 @@ class UpdateStudent extends Component {
 
 	}
 
+	onClickFirstName=()=>{
+		this.updateStudentFirstName();
+		this.clearFields();
+	}
+
+	onClickLastName=()=>{
+		this.updateStudentLastName();
+		this.clearFields();
+	}
 	
+	onClickUpdateStudentSchoolId=()=>{
+		this.updateStudentSchoolId();
+		this.clearFields();
+	}
+	
+
+	
+	clearFields=()=>{
+		this.state.firstName = ''
+		this.state.lastName = ''
+		this.state.schoolId = ''
+	}
+
 
 
 	updateFirstName = event => {
@@ -32,18 +54,48 @@ class UpdateStudent extends Component {
 	updateSchoolId = event => {
 		this.setState({ schoolId: event.target.value })
 	}
+	updateStudentFirstName = () => {
+	 	var studentIdToUpdate = this.props.studentId;
 
-
-	updateStudent = () => {
-	 	var studentIdToUpdate = document.getElementById('UpdateStudentId').innerText
-
-		fetch('/api/students/updateStudent', {
-			method: 'post',
+		fetch('/api/students/updateStudentFirstName', {
+			method: 'PUT',
 			body: JSON.stringify({
 				studentFirstName: this.state.firstName,
+				studentId: studentIdToUpdate
+
+			})
+		})
+			.then(res => res.json())
+			.then(students => {
+				this.updateAllStudents(students)
+				this.props.checkCurrentStudent()
+			})
+	}
+		updateStudentLastName = () => {
+	 	var studentIdToUpdate = this.props.studentId;
+
+		fetch('/api/students/updateStudentLastName', {
+			method: 'PUT',
+			body: JSON.stringify({
 				studentLastName: this.state.lastName,
+				studentId: studentIdToUpdate
+
+			})
+		})
+			.then(res => res.json())
+			.then(students => {
+				this.updateAllStudents(students)
+				this.props.checkCurrentStudent()
+			})
+	}
+
+	updateStudentSchoolId = () => {
+	 var studentIdToUpdate = this.props.studentId;
+
+		fetch('/api/students/updateStudentSchoolId', {
+			method: 'PUT',
+			body: JSON.stringify({
 				studentSchoolIdNumber: this.state.schoolId,
-				studentSchoolIdNumber: this.state.studentIdToUpdate,
 				studentId: studentIdToUpdate
 
 			})
@@ -55,44 +107,9 @@ class UpdateStudent extends Component {
 				this.props.checkCurrentStudent()
 			})
 	}
-
-
-
-	// updateStudent = () => {
-	// 	var firstName = document.getElementById('StudentFirstName').value
-	// 	var lastName = document.getElementById('StudentlastName').value
-	// 	var schoolId = document.getElementById('StudentSchoolIdNumber').value
-	// 	var studentIdToUpdate = document.getElementById('UpdateStudentId')
-	// 		.innerText
-	// 	var xhttp = new XMLHttpRequest()
-	// 	var url = '/api/students/updateStudent'
-	// 	// Sets behavior for when the AJAX request is complete
-	// 	xhttp.onreadystatechange = function() {
-	// 		// Checks the ready state and http status code
-	// 		if (this.readyState === 4 && this.status === 200) {
-	// 		}
-	// 	}
-
-	// 	xhttp.open('POST', url, true)
-	// 	const body = JSON.stringify({
-	// 		studentId: studentIdToUpdate,
-	// 		studentFirstName: firstName,
-	// 		studentLastName: lastName,
-	// 		studentSchoolIdNumber: schoolId
-	// 	})
-
-	// 	console.log(body)
-	// 	xhttp.send(body)
-	// }
-
-	// componentDidMount(){
-	// 	this.setState({studentId: document.querySelector("studentSection").getAttribute("key")})
-	// }
-
 	render() {
 		return (
 			<section class="update-student">
-				<p id="UpdateStudentId">{this.props.studentId}</p>
 				<label>
 					{' '}
 					First Name:
@@ -101,9 +118,12 @@ class UpdateStudent extends Component {
 						name="StudentFirstName"
 						id="StudentFirstName"
 						value={this.state.firstName}
+						
 						onChange={this.updateFirstName}
+
 					/>
 				</label>
+				<button className="studentSubmit" onClick={this.onClickFirstName}>Submit</button>
 				<label>
 					{' '}
 					Last Name
@@ -115,6 +135,7 @@ class UpdateStudent extends Component {
 						onChange={this.updateLastName}
 					/>
 				</label>
+				<button className="studentSubmit1" onClick={this.onClickLastName}>Submit</button>
 				<label>
 					{' '}
 					Student School Id Num
@@ -127,9 +148,8 @@ class UpdateStudent extends Component {
 					/>
 				</label>
 
-				<button className="studentSubmit" onClick={this.updateStudent}>
-					Submit
-				</button>
+				<button className="studentSubmit" onClick={this.onClickUpdateStudentSchoolId}>Submit</button>
+
 			</section>
 		)
 	}

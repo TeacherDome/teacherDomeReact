@@ -3,11 +3,15 @@ import api from './api'
 import MathChart from './MathChart'
 import UpdateStudent from './UpdateStudent'
 import ReadingChart from './ReadingChart'
+import StudentContainer from './StudentContainer'
+import StudentOptions from './StudentOptions'
 
 class Student extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+			isMain: true,
+     		location: '',
 			studentRetireCheck: false,
 			firstName: '',
 			lastName: '',
@@ -18,8 +22,17 @@ class Student extends Component {
 			defaultStudentSchoolIdNumber: '',
 			defaultStudentId: ''
 			}
+		
 		}
 	}
+
+	  toggleIsMain = () => {
+	    this.setState({isMain: !this.state.isMain})
+	  }
+
+	  changeLocation = (location) => {
+	    this.setState({location})
+	  }
 
 	updateAllStudents = response => {
 		this.props.updateStudents(response)
@@ -37,7 +50,7 @@ class Student extends Component {
 
 	checkCurrentStudent = () =>{
 		fetch('/api/student', {
-			method: 'post',
+			method: 'PUT',
 			body: JSON.stringify({
 				studentId: this.props.currentStudent.studentId
 			})
@@ -48,7 +61,7 @@ class Student extends Component {
 
 	submitRetiredStudent = () =>{
 		fetch('/api/students/retireStudent', {
-			method: 'post',
+			method: 'PUT',
 			body: JSON.stringify({
 				studentId: this.props.currentStudent.studentId
 			})
@@ -56,22 +69,6 @@ class Student extends Component {
 			.then(res => res.json())
 			.then(students => this.updateAllStudents(students))
 			this.defaultCurrentStudent()
-	
-		// var xhttp = new XMLHttpRequest()
-		// var studentIdToRetire = this.props.currentStudent.studentId
-		// var url = '/api/students/retireStudent'
-
-		// xhttp.onreadystatechange = function() {
-		// 	if (this.readState === 4 && this.status === 200) {
-		// 	}
-		// }
-
-		// xhttp.open('POST', url, true)
-		// const body = JSON.stringify({
-		// 	studentId: studentIdToRetire
-		// })
-
-		// xhttp.send(body)
 	}
 
 	toggleCheck = () => {
@@ -96,20 +93,34 @@ class Student extends Component {
 			>
 				<p class="name"> {this.props.currentStudent.studentFirstName}</p>
 				<p class="name"> {this.props.currentStudent.studentLastName}</p>
-				<MathChart />
-				<ReadingChart />
-				<input
-					type="checkbox"
-					id="checkboxChoice"
-					checked={this.state.studentRetireCheck}
-					onChange={this.toggleCheck}
-				/>
-				<p>Retire Student</p>
-				<UpdateStudent
-					studentId={this.props.currentStudent.studentId}
-					updateStudents={this.props.updateStudents}
-					checkCurrentStudent={this.checkCurrentStudent}
-				/>
+			
+				
+			
+
+
+				 <StudentOptions changeLocation={this.changeLocation} />
+			         <StudentContainer>
+			          {this.state.location === 'info'
+			          ?	<section>
+							<UpdateStudent
+								studentId={this.props.currentStudent.studentId}
+								updateStudents={this.props.updateStudents}
+								checkCurrentStudent={this.checkCurrentStudent}
+							/>
+							<input
+								type="checkbox"
+								id="checkboxChoice"
+								checked={this.state.studentRetireCheck}
+								onChange={this.toggleCheck}
+							/>
+							<p>Retire Student</p>
+						</section>
+			          :this.state.location === 'math'
+			          ?<MathChart />
+			          :this.state.location === 'reading'
+			          ?<ReadingChart />
+			          : <p> Here</p>}
+			        </StudentContainer>
 			</section>
 		)
 	}
