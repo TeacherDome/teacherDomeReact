@@ -26,13 +26,15 @@ class Student extends Component {
 		}
 	}
 
-	  toggleIsMain = () => {
-	    this.setState({isMain: !this.state.isMain})
-	  }
 
-	  changeLocation = (location) => {
+	toggleIsMain = () => {
+	    this.setState({isMain: !this.state.isMain})
+	}
+
+	changeLocation = (location) => {
 	    this.setState({location})
-	  }
+
+	}
 
 	updateAllStudents = response => {
 		this.props.updateStudents(response)
@@ -44,11 +46,15 @@ class Student extends Component {
 
 	defaultCurrentStudent = () => {
 		this.props.changeStudent(this.state.defaultStudent)
+
 	}
 
-
+	updateRetireBox = () => {
+		this.setState({studentRetireCheck: this.props.currentStudent.studentIsRetired})
+	}
 
 	checkCurrentStudent = () =>{
+			console.log("HERE")
 		fetch('/api/student', {
 			method: 'PUT',
 			body: JSON.stringify({
@@ -81,6 +87,8 @@ class Student extends Component {
 				studentRetireCheck: !this.state.studentRetireCheck
 			})
 			this.submitRetiredStudent()
+			this.changeLocation('')
+			this.updateRetireBox()
 			
 		}
 	}
