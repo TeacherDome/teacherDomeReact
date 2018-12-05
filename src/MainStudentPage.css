@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif; 
+}
+
+.MainStudentPage {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.class-list {
+  background-color: #FF2FC7
+}
+
+#current-student {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  padding: 1rem;
+  font-size: 4rem;
+  background-color: #90FF7B;
+}
+
+.studentInList {
+  padding: 2rem;
+  transition: 0.3s;
+}
+
+.studentInList:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.update-student {
+  padding: 1rem;
+}
+
+.viewed-student {
+  padding: 1rem;
+}
