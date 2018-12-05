@@ -55,7 +55,7 @@ class AddStudent extends Component {
 					<input
 						type="text"
 						name="studentFirstName"
-						id="firsNtame"
+						id="firstName"
 						placeholder="Luke"
 						required
 						value={this.state.firstName}

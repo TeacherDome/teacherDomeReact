@@ -4,6 +4,7 @@ import AllStudents from './AllStudents'
 import Student from './Student'
 import UpdateStudent from './UpdateStudent'
 
+
 class MainStudentPage extends Component {
 	constructor() {
 		super()
