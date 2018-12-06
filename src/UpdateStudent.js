@@ -109,7 +109,7 @@ class UpdateStudent extends Component {
 	}
 	render() {
 		return (
-			<section class="update-student">
+			<section className="update-student">
 				<label>
 					{' '}
 					First Name:
