@@ -21,7 +21,6 @@ class App extends Component {
     this.setState({isMain: !this.state.isMain})
   }
 
-<<<<<<< HEAD
 	render() {
 		return (
 			<div className="App">
@@ -32,11 +31,10 @@ class App extends Component {
 			</div>
 		)
 	}
-=======
+
   changeLocation = (location) => {
     this.setState({location})
   }
->>>>>>> 1ea10cf344c46957233edc11240a14e9036d3fc7
 
   render() {
     return (
