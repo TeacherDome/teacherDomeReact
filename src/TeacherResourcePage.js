@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import api from './api'
 
-class TeacherResourcesPage  extends Component {
+class TeacherResourcePage  extends Component {
 	constructor(props) {
 		super(props) 
 		this.state ={
@@ -30,11 +30,13 @@ render() {
 			<h2> Folder List </h2>
 			{this.state.teacherResourceFolders.map((teacherResourceFolder, index) => (
 					<section className="folderInList" key={index}>
+					
 					</section>
+
 			))
 			}
 			</section>
 )
 }
 }
-export default TeacherResourcesPage
+export default TeacherResourcePage
