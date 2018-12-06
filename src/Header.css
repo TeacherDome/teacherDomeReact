@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: 
+
+}
+.clearfix::after {
+	clear: both;
+	content: '';
+	display: block;
+}
+
+.header{
+	display: grid;
+  	grid-template-rows: 1.5fr 1fr;
+  	margin: 0 auto;
+	width: 1000px;
+}
+.banner{
+	margin:15px;
+	display: flex;
+	justify-content: center;
+}
+.bannerNavigation{
+	display: flex;
+	justify-content: center;
+}
+
+.navigation{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	list-style-type: none;
+}
