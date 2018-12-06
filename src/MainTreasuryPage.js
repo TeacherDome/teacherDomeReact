@@ -1,12 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './Layout.css';
+import Treasury from './Treasury'
+import Receipts from './Receipts'
 
-const MainTreasuryPage = ({changeLocation}) => {
+
+class MainTreasuryPage extends Component {
+	constructor() {
+		super()
+		this.state = {
+     	 	funds: [],
+     	 	receipts: []
+		}
+	}
+
+	 updateFunds = newFunds => {
+    this.setState({ funds: newFunds })
+  }
+
+	 updateReceipts = newReciepts => {
+    this.setState({ receipts: newReciepts })
+  }
+
+
+render(){
 	return (
-      <h1>This is the treasury Page</h1>
-     
-   
-	)
+		<section>
+     <Treasury treasuryFunds = {this.state.funds} />
+     <Receipts allReceipts={this.state.receipts} updateFunds={this.updateFunds} updateReceipts={this.state.receipts} treasuryFunds = {this.state.funds}/>
+     </section>
+     )
+	}
 }
 
 export default MainTreasuryPage
+
+
+
