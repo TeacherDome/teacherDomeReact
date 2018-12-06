@@ -21,17 +21,6 @@ class App extends Component {
     this.setState({isMain: !this.state.isMain})
   }
 
-	render() {
-		return (
-			<div className="App">
-				<AllStudents changeStudent={this.changeStudent} />
-				<Student updateStudents = {this.updateStudents} currentStudent={this.state.currentStudent} />
-                    
-
-			</div>
-		)
-	}
-
   changeLocation = (location) => {
     this.setState({location})
   }
