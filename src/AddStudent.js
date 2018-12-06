@@ -49,7 +49,7 @@ class AddStudent extends Component {
 
 	render() {
 		return (
-			<section class="add-student">
+			<section className="add-student">
 				<label>
 					First Name:{' '}
 					<input

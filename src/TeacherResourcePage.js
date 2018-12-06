@@ -18,6 +18,11 @@ class TeacherResourcePage  extends Component {
 			this.setState({ teacherResourceFolders: newFolder })
 	})
 }
+
+changeResourceFolder(passedTeacherResourceFolder) {
+		this.props.changeResourceFolder(passedTeacherResourceFolder)
+	}
+
 	componentDidMount() {
 		this.getTeacherResorce()
 	}
@@ -30,7 +35,13 @@ render() {
 			<h2> Folder List </h2>
 			{this.state.teacherResourceFolders.map((teacherResourceFolder, index) => (
 					<section className="folderInList" key={index}>
-					
+					<h2
+							onClick={() =>
+								this.changeResourceFolder(teacherResourceFolder)
+							}
+						>
+							{teacherResourceFolder.resourceFolderName}
+						</h2>
 					</section>
 
 			))

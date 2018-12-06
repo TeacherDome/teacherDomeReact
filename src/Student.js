@@ -99,8 +99,8 @@ class Student extends Component {
 				id="studentSection"
 				key={this.props.currentStudent.studentId}
 			>
-				<p class="name"> {this.props.currentStudent.studentFirstName}</p>
-				<p class="name"> {this.props.currentStudent.studentLastName}</p>
+				<p className="name"> {this.props.currentStudent.studentFirstName}</p>
+				<p className="name"> {this.props.currentStudent.studentLastName}</p>
 			
 				
 			
