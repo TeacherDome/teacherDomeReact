@@ -38,6 +38,7 @@ class ReadingChart extends Component{
 		            ],
 		            borderColor: [
 		                'rgba(255,99,132,1)',
+					]
 				}]
 			}
 		})
