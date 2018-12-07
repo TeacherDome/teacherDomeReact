@@ -13,23 +13,33 @@
   display: grid;
   grid-template-columns: 1fr 4fr;
   margin: 0 auto;
-  max-width: 1200px;
+  padding: 40px;
+  max-width: 100vw;
 }
 
 .class-list {
   background-color: #FF2FC7
 }
 
+.class-list-header{
+  display: flex;
+  justify-content: center;
+  background-color: red;
+}
+
 #current-student {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .name {
   padding: 1rem;
-  font-size: 4rem;
+  font-size: 3rem;
   background-color: #90FF7B;
+  display: flex;
+  justify-content: center;
+
 }
 
 .studentInList {
@@ -41,10 +51,18 @@
   background-color: rgba(0, 0, 0, .1);
 }
 
-.update-student {
-  padding: 1rem;
+.add-student{
+ margin: 12px;
+}
+.studentNav{
+  list-style-type: none;
+  background-color: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.viewed-student {
-  padding: 1rem;
+.option{
+   display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
 }

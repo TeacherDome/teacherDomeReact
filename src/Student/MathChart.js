@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
-import api from './api';
-
+import api from '../api'
 
 class MathChart extends Component{
 	constructor(props){
