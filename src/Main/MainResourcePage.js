@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import TeacherResourcePage from './TeacherResourcePage'
 
@@ -32,6 +31,7 @@ class MainStudentPage extends Component {
 	changeTeacherResourcePage = passedFolder => {
 		this.setState({ currentFolder: passedFolder })
 	}
+
 }
 
 export default MainStudentPage

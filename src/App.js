@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-
-import './App.css';
-import MainStudentPage from './MainStudentPage'
-import Container from './Container'
-import Header from './Header'
-import Main from './Main'
-import MainResourcePage from './MainResourcePage'
-import MainTreasuryPage from './MainTreasuryPage'
+import MainStudentPage from './Main/MainStudentPage'
+import Container from './Main/Container'
+import Header from './Main/Header'
+import Main from './Main/Main'
+import MainResourcePage from './Main/MainResourcePage'
+import MainTreasuryPage from './Main/MainTreasuryPage'
 
 
 class App extends Component {
