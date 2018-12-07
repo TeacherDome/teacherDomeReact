@@ -25,6 +25,7 @@ class MainStudentPage extends Component {
 			<section className= "MainResourcePage">
 	    	  <h1>This is the resource Page</h1>
 	    	 <TeacherResourcePage teacherResourcePage = {this.state.teacherResourceFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} updateFolders={this.updateFolders} />
+	    	 <Folder updateFolders = {this.updateFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} currentFolder= {currentFolder} />
 	   		</section>
 		)	
 	}
