@@ -52,6 +52,7 @@ class AddStudent extends Component {
 			<section className="add-student">
 				<label>
 					First Name:{' '}
+					<br />
 					<input
 						type="text"
 						name="studentFirstName"
@@ -62,8 +63,10 @@ class AddStudent extends Component {
 						onChange={this.updateFirstName}
 					/>
 				</label>
+				<br />
 				<label>
 					Last Name:{' '}
+					<br />
 					<input
 						type="text"
 						name="studentLastName"
