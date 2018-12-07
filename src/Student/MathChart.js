@@ -1,15 +1,40 @@
 import React, { Component } from 'react';
-import {Line, Bar} from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2';
+import api from './api';
 
 
 class MathChart extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
+			chartData: {},
+			studentId: ''
+		}
+	}
+
+	componentWillMount(){
+		this.getChartData();
+		console.log()
+	}
+
+	getChartData(){
+		let mathScores = [];
+		let mathDates = [];
+		api(`http://localhost:8080/api/math-scores`)
+		.then(scores => {
+			scores.forEach( score => {
+				if(score.student.studentId == this.props.studentId) {
+					mathScores.push(score.score);
+					mathDates.push(score.date);
+				}
+			});
+		});
+
+		this.setState({
 			chartData:{
-				labels:["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+				labels:mathDates,
 				datasets:[{
-		            data: [122, 129, 23, 522, 122, 322],
+		            data: mathScores,
 		            backgroundColor: [
 		                'rgba(54, 162, 235, 0.2)',
 		            ],
@@ -19,9 +44,8 @@ class MathChart extends Component{
 
 				}]
 			}
-		}
+		})
 	}
-
 
 
 	render() {

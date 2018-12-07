@@ -99,8 +99,8 @@ class Student extends Component {
 				id="studentSection"
 				key={this.props.currentStudent.studentId}
 			>
-				<p class="name"> {this.props.currentStudent.studentFirstName}</p>
-				<p class="name"> {this.props.currentStudent.studentLastName}</p>
+				<p className="name"> {this.props.currentStudent.studentFirstName}</p>
+				<p className="name"> {this.props.currentStudent.studentLastName}</p>
 			
 				
 			
@@ -124,9 +124,9 @@ class Student extends Component {
 							<p>Retire Student</p>
 						</section>
 			          :this.state.location === 'math'
-			          ?<MathChart />
+			          ?<MathChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'reading'
-			          ?<ReadingChart />
+			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
 			          : <p> Here</p>}
 			        </StudentContainer>
 			</section>
