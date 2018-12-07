@@ -26,7 +26,7 @@ render(){
 	return (
 		<section>
      <Treasury treasuryFunds = {this.state.funds} />
-     <Receipts allReceipts={this.state.receipts} updateFunds={this.updateFunds} updateReceipts={this.state.receipts} treasuryFunds = {this.state.funds}/>
+     <Receipts allReceipts={this.state.receipts} updateFunds={this.updateFunds} updateReceipts={this.updateReceipts} treasuryFunds = {this.state.funds}/>
      </section>
      )
 	}
