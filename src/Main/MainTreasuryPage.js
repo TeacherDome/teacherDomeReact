@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import './Layout.css';
-import Treasury from './Treasury'
-import Receipts from './Receipts'
+import Treasury from '../Treasury/Treasury'
+import Receipts from '../Treasury/Receipts'
 
 
 class MainTreasuryPage extends Component {
@@ -24,7 +23,7 @@ class MainTreasuryPage extends Component {
 
 render(){
 	return (
-		<section>
+		<section className="MainTreasuryPage">
      <Treasury treasuryFunds = {this.state.funds} />
      <Receipts allReceipts={this.state.receipts} updateFunds={this.updateFunds} updateReceipts={this.updateReceipts} treasuryFunds = {this.state.funds}/>
      </section>
