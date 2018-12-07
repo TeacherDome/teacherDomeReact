@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import './MainStudentPage.css'
-import AllStudents from './AllStudents'
-import Student from './Student'
-import UpdateStudent from './UpdateStudent'
+import AllStudents from '../Student/AllStudents'
+import Student from '../Student/Student'
+import UpdateStudent from '../Student/UpdateStudent'
 
 
 class MainStudentPage extends Component {

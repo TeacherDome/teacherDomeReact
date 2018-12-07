@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import api from './api'
+import api from '../api'
 import AddStudent from './AddStudent'
 
 class AllStudents extends Component {

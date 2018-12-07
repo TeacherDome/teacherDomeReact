@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import api from './api'
+import api from '../api'
 import UpdateTreasury from './UpdateTreasury'
 
 class Receipts extends Component {
