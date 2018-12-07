@@ -103,8 +103,8 @@ class Student extends Component {
 			
 				
 			
-
-
+				
+				
 				 <StudentOptions changeLocation={this.changeLocation} />
 			         <StudentContainer>
 			          {this.state.location === 'info'
