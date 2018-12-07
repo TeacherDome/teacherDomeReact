@@ -126,7 +126,7 @@ class Student extends Component {
 			          :this.state.location === 'math'
 			          ?<MathChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'reading'
-			          ?<ReadingChart />
+			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
 			          : <p> Here</p>}
 			        </StudentContainer>
 			</section>
