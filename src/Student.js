@@ -124,9 +124,9 @@ class Student extends Component {
 							<p>Retire Student</p>
 						</section>
 			          :this.state.location === 'math'
-			          ?<MathChart />
+			          ?<MathChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'reading'
-			          ?<ReadingChart />
+			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
 			          : <p> Here</p>}
 			        </StudentContainer>
 			</section>

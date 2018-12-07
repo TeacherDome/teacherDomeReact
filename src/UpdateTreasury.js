@@ -50,9 +50,13 @@ class UpdateTreasury extends Component {
 
 	updateTheFunds = response => {
 		this.props.updateFunds(response)
+		this.getNewReceipts()
+
 	}
 
-
+	updateTheReceipts = response => {
+		this.props.updateReceipts(response)
+	}
 
 
 	addFunds = () => {
@@ -79,6 +83,17 @@ class UpdateTreasury extends Component {
 		})
 			.then(res => res.json())
 			.then(funds => this.updateTheFunds(funds))
+	}
+
+	getNewReceipts = () => {
+		fetch('/api/treasury/getReceipts', {
+			method: 'put',
+			body: JSON.stringify({
+	
+			})
+		})
+			.then(res => res.json())
+			.then(receipts => this.updateTheReceipts(receipts))
 	}
 
 	render() {
