@@ -1,26 +1,28 @@
 import React, { Component } from 'react'
 import api from './api'
+import AddFolder from './AddFolder'
 
 class TeacherResourcePage  extends Component {
 	constructor(props) {
 		super(props) 
-		this.state ={
-			teacherResourceFolders: []
-		}
+		this.state = {
+  
+
+      	}
 	}
 	
 	getTeacherResorce = () => {
-		api(`http://localhost:8080/api/TeacherResourcesPage`).then(teacherResourceFolders => {
-			const newFolder = this.state.teacherResourceFolders
-			teacherResourceFolders.forEach(teacherResourceFolder =>{
-				newFolder.push(teacherResourceFolder)
+		api(`http://localhost:8080/api/TeacherResourcePage`).then(teacherResourceFolders => {
+			const newFolder = this.props.teacherResourcePage
+			teacherResourceFolders.forEach(teacherResource =>{
+				newFolder.push(teacherResource)
 		})
 			this.setState({ teacherResourceFolders: newFolder })
 	})
 }
 
-changeResourceFolder(passedTeacherResourceFolder) {
-		this.props.changeResourceFolder(passedTeacherResourceFolder)
+changeTeacherResourceFolder(passedFolder) {
+		this.props.changeTeacherResourcePage(passedFolder)
 	}
 
 	componentDidMount() {
@@ -33,21 +35,23 @@ render() {
 		return (
 			<section className="folder-list">
 			<h2> Folder List </h2>
-			{this.state.teacherResourceFolders.map((teacherResourceFolder, index) => (
+			{console.log(this.props.teacherResourcePage)}
+			{this.props.teacherResourcePage.map((resourceFolders, index) => (
 					<section className="folderInList" key={index}>
 					<h2
 							onClick={() =>
-								this.changeResourceFolder(teacherResourceFolder)
+								this.changeTeacherResourceFolder(resourceFolders)
 							}
 						>
-							{teacherResourceFolder.resourceFolderName}
+							{resourceFolders.resourceFolderName}
 						</h2>
 					</section>
 
-			))
-			}
+			))}
+			<AddFolder updateFolders={this.props.updateFolders} />
 			</section>
-)
+		)
+	}
 }
-}
+
 export default TeacherResourcePage
