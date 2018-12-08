@@ -10,22 +10,45 @@
 	display: block;
 }
 
+:root { 
+    --primary-color: #FFFFF3;
+    --secondary-color: #EBC222;
+    --tertiary-color: #00099E;
+  	--tertiary-background-color: #6177F5;
+}
+
+
 .header{
 	display: grid;
   	grid-template-rows: 1.5fr 1fr;
   	margin: 0 auto;
 	max-width: 1000px;
+	
 }
 .banner{
 	margin:15px;
 	display: flex;
 	justify-content: center;
+
 }
 .bannerNavigation{
 	display: flex;
 	justify-content: center;
+	font-size: 1.1rem;
+	font-style: italic;
+	 -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  	border-style: double;
+  	border-color:  var(--secondary-color);
+  	padding: 3px;
+  	margin: 5px;
+
 }
 
+.bannerNavigation:hover{
+ border-width: 5px;
+}
 .navigation{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;

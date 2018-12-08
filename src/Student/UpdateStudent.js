@@ -110,7 +110,11 @@ class UpdateStudent extends Component {
 	render() {
 		return (
 			<section className="update-student">
-				<label>
+			<br/>
+			<h1 className="update-student-h1">Update Student Information</h1>
+			<br/>
+				<section className="studentInputs">
+				<label className="InputUpdate">
 					{' '}
 					First Name:
 					<input
@@ -122,11 +126,15 @@ class UpdateStudent extends Component {
 						onChange={this.updateFirstName}
 
 					/>
+					<button className="studentSubmit" onClick={this.onClickFirstName}>Submit</button>
 				</label>
-				<button className="studentSubmit" onClick={this.onClickFirstName}>Submit</button>
-				<label>
+
+			
+				<br/>
+				<br/>
+				<label className="InputUpdate">
 					{' '}
-					Last Name
+					Last Name:
 					<input
 						type="text"
 						name="StudentLastName"
@@ -134,11 +142,14 @@ class UpdateStudent extends Component {
 						value={this.state.lastName}
 						onChange={this.updateLastName}
 					/>
+					<button className="studentSubmit1" onClick={this.onClickLastName}>Submit</button>
 				</label>
-				<button className="studentSubmit1" onClick={this.onClickLastName}>Submit</button>
-				<label>
+				
+				<br/>
+				<br/>
+				<label className="InputUpdate">
 					{' '}
-					Student School Id Num
+					Student School Id Num: 
 					<input
 						type="text"
 						name="StudentSchoolIdNumber"
@@ -146,10 +157,9 @@ class UpdateStudent extends Component {
 						value={this.state.schoolId}
 						onChange={this.updateSchoolId}
 					/>
+					<button className="studentSubmit" onClick={this.onClickUpdateStudentSchoolId}>Submit</button>
 				</label>
-
-				<button className="studentSubmit" onClick={this.onClickUpdateStudentSchoolId}>Submit</button>
-
+				</section>
 			</section>
 		)
 	}

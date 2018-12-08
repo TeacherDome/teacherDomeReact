@@ -126,6 +126,7 @@ class UpdateTreasury extends Component {
 				
 				<button className="fundsSubmit" onClick={this.onClickAdd}>Submit</button>
 				<br/>
+				<br/>
 				<label>
 					{' '}
 					Remove Funds:

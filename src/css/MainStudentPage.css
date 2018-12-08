@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: var(--primary-color);
 
 }
 .clearfix::after {
@@ -9,6 +10,15 @@
   content: '';
   display: block;
 }
+
+
+:root { 
+    --primary-color: #FFFFF3;
+    --secondary-color: #EBC222;
+    --tertiary-color: DarkSlateGray;
+}
+
+
 .MainStudentPage {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -18,26 +28,31 @@
 }
 
 .class-list {
-  background-color: #FF2FC7
+  background-color: var(--secondary-color);
 }
 
 .class-list-header{
   display: flex;
   justify-content: center;
-  background-color: red;
-   font-size: 1.7rem;
+  text-decoration: underline;
+  font-size: 1.7rem;
+  border-style: solid;
+  border-radius: 25px;
+  margin: 2px;
+  padding: 10px;
+  border-color:  var(--secondary-color);
 }
 
 #current-student {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
 
 .name {
   padding: 1rem;
   font-size: 3rem;
-  background-color: #90FF7B;
   display: flex;
   justify-content: center;
 
@@ -46,24 +61,69 @@
 .studentInList {
   padding: 2rem;
   transition: 0.3s;
+  
 }
 
 .studentInList:hover {
-  background-color: rgba(0, 0, 0, .1);
+  
+  text-decoration: underline;
+  font-style: italic;
+
 }
 
 .add-student{
- margin: 12px;
+ margin: 5px;
+ padding: 10px;
+border-radius: 25px;
 }
 .studentNav{
   list-style-type: none;
-  background-color: red;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
+  margin: 5px;
 
+}
 .option{
    display: flex;
   justify-content: center;
   font-size: 1.2rem;
+  border-style: double;
+  border-color:  var(--secondary-color);
+  margin-left: 3px;
+  padding: 5px;
 }
+
+.update-student-h1{
+   display: flex;
+  justify-content: space-around;
+}
+
+.studentInputs{
+   display: flex;
+  justify-content: center;
+}
+
+button{
+ padding: 5px;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+  border-color:var(--secondary-color); 
+       
+}
+
+.InputUpdate{
+  margin: 5px;
+
+}
+
+.retired-box{
+  margin: 5px;
+  margin-top: 3px;
+
+}
+
+.retireFields{
+   display: flex;
+  justify-content: center;
+  }
