@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import api from '../api'
-import AddFolder from '../AddFolder'
+import AddFolder from './AddFolder'
 
 class TeacherResourcePage  extends Component {
 	constructor(props) {

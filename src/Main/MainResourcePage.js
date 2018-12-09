@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import TeacherResourcePage from './TeacherResourcePage'
+import TeacherResourcePage from '../Resources/TeacherResourcePage'
+import Folder from '../Resources/Folder'
 
 
 class MainStudentPage extends Component {
@@ -8,7 +9,8 @@ class MainStudentPage extends Component {
 		this.state = {
      teacherResourceFolders: [],
      	currentFolder: {
-     		currentFolderName: ""
+     		currentFolderName: "",
+     		currentFolderId: ""
      	}
 
       	}
