@@ -1,48 +1,51 @@
 import React, { Component } from 'react';
-import {Line, Bar} from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2';
+import api from '../api'
 
-
-class ReadingChart extends Component{
+class MathChart extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			chartData:{},
+			chartData: {},
 			studentId: ''
 		}
 	}
 
 	componentWillMount(){
 		this.getChartData();
+		console.log()
 	}
 
 	getChartData(){
-		let readingScores = [];
-		let readingDates = [];
-		api(`http://localhost:8080/api/reading-scores`)
+		let mathScores = [];
+		let mathDates = [];
+		api(`http://localhost:8080/api/math-scores`)
 		.then(scores => {
 			scores.forEach( score => {
 				if(score.student.studentId == this.props.studentId) {
-					readingScores.push(score.score);
-					readingDates.push(score.date);
+					mathScores.push(score.score);
+					mathDates.push(score.date);
 				}
 			});
 		});
 
 		this.setState({
 			chartData:{
-				labels:readingDates,
+				labels:mathDates,
 				datasets:[{
-		            data: readingScores,
+		            data: mathScores,
 		            backgroundColor: [
-		                'rgba(255, 99, 132, 0.2)',
+		                'rgba(54, 162, 235, 0.2)',
 		            ],
 		            borderColor: [
-		                'rgba(255,99,132,1)',
-					]
+		                'rgba(54, 162, 235, 1)',
+		            ],
+
 				}]
 			}
 		})
 	}
+
 
 	render() {
    		return (
@@ -53,7 +56,7 @@ class ReadingChart extends Component{
    					options={{
    						title: {
 	   						display:true,
-	   						text:'Reading Scores',
+	   						text:'Math Scores',
 	   						fontSize:40
    						},
    						legend: {
@@ -62,8 +65,9 @@ class ReadingChart extends Component{
    					}}
    				/>
    			</div>
-		)
-	}		
+
+   	)}		
 }
 
-export default ReadingChart
+export default MathChart
+

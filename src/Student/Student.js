@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import api from './api'
+import api from '../api'
 import MathChart from './MathChart'
 import UpdateStudent from './UpdateStudent'
 import ReadingChart from './ReadingChart'
@@ -99,14 +99,15 @@ class Student extends Component {
 				id="studentSection"
 				key={this.props.currentStudent.studentId}
 			>
-				<p className="name"> {this.props.currentStudent.studentFirstName}</p>
-				<p className="name"> {this.props.currentStudent.studentLastName}</p>
+				<p className="name"> {this.props.currentStudent.studentFirstName} { " "}{this.props.currentStudent.studentLastName}</p>
 			
 				
 			
 
 
 				 <StudentOptions changeLocation={this.changeLocation} />
+				 <br/>
+
 			         <StudentContainer>
 			          {this.state.location === 'info'
 			          ?	<section>
@@ -115,19 +116,25 @@ class Student extends Component {
 								updateStudents={this.props.updateStudents}
 								checkCurrentStudent={this.checkCurrentStudent}
 							/>
+
+							<br/>
+							<section className="retireFields">
+							<p>Retire Student
 							<input
 								type="checkbox"
 								id="checkboxChoice"
+								className="retired-box"
 								checked={this.state.studentRetireCheck}
 								onChange={this.toggleCheck}
 							/>
-							<p>Retire Student</p>
+							</p>
+							</section>
 						</section>
 			          :this.state.location === 'math'
 			          ?<MathChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'reading'
 			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
-			          : <p> Here</p>}
+			          : <p> </p>}
 			        </StudentContainer>
 			</section>
 		)

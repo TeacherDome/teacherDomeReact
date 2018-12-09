@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import api from './api'
+import api from '../api'
 class UpdateTreasury extends Component {
 	constructor(props) {
 		super(props)
@@ -115,7 +115,7 @@ class UpdateTreasury extends Component {
 					{' '}
 					Comments:
 					<input
-						type="textarea"
+						type="textArea"
 						name="addMoneyComment"
 						id="addMoneyComment"
 						value={this.state.addMoneyComment}
@@ -125,7 +125,8 @@ class UpdateTreasury extends Component {
 
 				
 				<button className="fundsSubmit" onClick={this.onClickAdd}>Submit</button>
-
+				<br/>
+				<br/>
 				<label>
 					{' '}
 					Remove Funds:

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import api from './api'
+import api from '../api'
 import UpdateTreasury from './UpdateTreasury'
 
 class Receipts extends Component {
@@ -24,10 +24,12 @@ class Receipts extends Component {
 		return (<section>
 				{this.props.allReceipts.map((receipt, index) => 
 					<section key={index}>
-						<h2>{receipt.lineItem}</h2>
+						<h2 className="receipts">{receipt.lineItem}</h2>
 					</section>
 				)}
+				<section className="UpdateTreasury">
 				<UpdateTreasury updateFunds={this.props.updateFunds} updateReceipts={this.props.updateReceipts} treasuryFunds = {this.funds}/>
+				</section>
 			</section>
 		)
 	}

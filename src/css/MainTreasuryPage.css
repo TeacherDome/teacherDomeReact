@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+
+}
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+
+:root { 
+    --primary-color: #FFFFF3;
+    --secondary-color: #EBC222;
+    --tertiary-color: DarkSlateGray;
+}
+
+.MainTreasuryPage {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.funds{
+  display: flex;
+  justify-content: center;
+
+  border-style: double;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 10px;
+  border-color:  var(--secondary-color);
+}
+
+.receipts{
+  display: flex;
+  justify-content: center;
+  margin: 2px;
+  padding: 10px;
+ 
+}
+
+.UpdateTreasury{
+  margin: 10px;
+  padding: 10px;
+  border-style: double;
+  border-radius: 5px;
+  border-color:  var(--secondary-color);
+}

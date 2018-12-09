@@ -50,8 +50,10 @@ class AddStudent extends Component {
 	render() {
 		return (
 			<section className="add-student">
+				<h1>Add Student</h1>
 				<label>
 					First Name:{' '}
+					<br />
 					<input
 						type="text"
 						name="studentFirstName"
@@ -62,8 +64,11 @@ class AddStudent extends Component {
 						onChange={this.updateFirstName}
 					/>
 				</label>
+				<br />
+				<br />
 				<label>
 					Last Name:{' '}
+					<br />
 					<input
 						type="text"
 						name="studentLastName"
@@ -74,6 +79,8 @@ class AddStudent extends Component {
 						onChange={this.updateLastName}
 					/>
 				</label>
+				<br />
+				<br />
 				<label>
 					Student Id:{' '}
 					<input
@@ -86,6 +93,8 @@ class AddStudent extends Component {
 						onChange={this.updateSchoolId}
 					/>
 				</label>
+				<br />
+				<br />
 				<button className="studentSubmit" onClick={this.onClick}>
 					Submit
 				</button>

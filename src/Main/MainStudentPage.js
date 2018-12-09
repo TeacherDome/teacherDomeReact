@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import './MainStudentPage.css'
-import AllStudents from './AllStudents'
-import Student from './Student'
-import UpdateStudent from './UpdateStudent'
+import AllStudents from '../Student/AllStudents'
+import Student from '../Student/Student'
+import UpdateStudent from '../Student/UpdateStudent'
 
+import '../css/MainStudentPage.css'
 
 class MainStudentPage extends Component {
 	constructor() {
@@ -27,7 +27,10 @@ class MainStudentPage extends Component {
 		return (
 			<div className="MainStudentPage">
 				<AllStudents allStudents = {this.state.students} changeStudent={this.changeStudent} updateStudents = {this.updateStudents} />
-				<Student updateStudents = {this.updateStudents} currentStudent={this.state.currentStudent} changeStudent={this.changeStudent}/>
+			 {this.state.currentStudent.currentStudentFirstName !== ''	
+				?<Student updateStudents = {this.updateStudents} currentStudent={this.state.currentStudent} changeStudent={this.changeStudent}/>
+				:<p></p>
+				}
 			</div>
 		)
 	}
@@ -38,3 +41,5 @@ class MainStudentPage extends Component {
 }
 
 export default MainStudentPage
+
+

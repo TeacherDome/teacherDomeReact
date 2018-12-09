@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import api from './api'
+import api from '../api'
 
 class Treasury extends Component {
 	constructor(props) {
@@ -19,10 +19,10 @@ class Treasury extends Component {
 	}
 
 	render() {
-		return (<section>
+		return (<section className="funds">
 				{this.props.treasuryFunds.map((fund, index) => 
 					<section key={index}>
-						<h2>{fund.funds}</h2>
+						<h2>Total funds ${fund.funds}</h2>
 					</section>
 				)}
 			</section>
