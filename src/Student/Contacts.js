@@ -5,15 +5,5 @@ class ContactPage  extends Component {
 	constructor(props) {
 		super(props) 
 		this.state = {
-			contactFistName: '',
-			contactLastName: '',
-			contactStreet: '',
-			contactCity: '',
-			contactState: '',
-			conatctZipCode: '',
-			contactEmail; '',
-			contactCellPhoneNumber: '',
-			contactHomPhoneNumber: '',
-			contactWorkPhoneNumber: '',
-			contactPriority: ''
+		
 		}

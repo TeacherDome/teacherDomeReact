@@ -18,3 +18,7 @@ class Contact extends Component {
 		}
 	}
 
+	updateAllContacts = response => {
+		this.props.updateContacts(response)
+	}
+
