@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import api from '../api'
 
-class Contact extends Component {
+class ContactPage  extends Component {
 	constructor(props) {
-		super(props)
+		super(props) 
 		this.state = {
 			contactFistName: '',
 			contactLastName: '',
@@ -16,5 +17,3 @@ class Contact extends Component {
 			contactWorkPhoneNumber: '',
 			contactPriority: ''
 		}
-	}
-
