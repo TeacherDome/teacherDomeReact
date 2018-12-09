@@ -3,6 +3,7 @@ import AllStudents from '../Student/AllStudents'
 import Student from '../Student/Student'
 import UpdateStudent from '../Student/UpdateStudent'
 
+import '../css/MainStudentPage.css'
 
 class MainStudentPage extends Component {
 	constructor() {

@@ -31,7 +31,7 @@ class AllStudents extends Component {
 
 		return (
 			<section className="class-list">
-				<h2> Class List </h2>
+				<h2 className="class-list-header"> Class List </h2>
 				{this.props.allStudents.map((student, index) => (
 					<section className="studentInList" key={index}>
 						<h2
