@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Treasury from '../Treasury/Treasury'
 import Receipts from '../Treasury/Receipts'
-
+import '../css/MainTreasuryPage.css'
 
 class MainTreasuryPage extends Component {
 	constructor() {

@@ -106,6 +106,8 @@ class Student extends Component {
 
 
 				 <StudentOptions changeLocation={this.changeLocation} />
+				 <br/>
+
 			         <StudentContainer>
 			          {this.state.location === 'info'
 			          ?	<section>
@@ -114,13 +116,19 @@ class Student extends Component {
 								updateStudents={this.props.updateStudents}
 								checkCurrentStudent={this.checkCurrentStudent}
 							/>
+
+							<br/>
+							<section className="retireFields">
+							<p>Retire Student
 							<input
 								type="checkbox"
 								id="checkboxChoice"
+								className="retired-box"
 								checked={this.state.studentRetireCheck}
 								onChange={this.toggleCheck}
 							/>
-							<p>Retire Student</p>
+							</p>
+							</section>
 						</section>
 			          :this.state.location === 'math'
 			          ?<MathChart studentId={this.props.currentStudent.studentId} />
