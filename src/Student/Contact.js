@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import api from '../api'
-import Contacts from './Contact'
-import AddContacts from './AddContacts'
+import AddContacts from './AddContact'
 
 
 class Contact extends Component {
@@ -15,11 +14,11 @@ class Contact extends Component {
 			cctCity: '',
 			cctState: '',
 			cctZipCode: '',
-			cctEmail; '',
+			cctEmail: '',
 			cctCellPhoneNumber: '',
 			cctHomPhoneNumber: '',
 			cctWorkPhoneNumber: '',
-			cctPriority: ''
+			cctPriority: '',
 		defaultContact: {
 			defaultCctFistName: '',
 			defaultCctLastName: '',
@@ -54,15 +53,20 @@ class Contact extends Component {
 
 render() {
 	return (
-		<section
-				id="contactSection"
-				key={this.props.currentContact.contactId}>
-				<p className="name"> {this.props.currentContact.contactFirstName} { " "}{this.props.currentStudent.ContactLastName}</p>		
+		<section id="contactSection">
+				
+				<p className="name"> {this.props.currentContact.contactFirstName} { " "} {this.props.currentStudent.contactLastName}</p>		
+				
+		          			
+		</section>
+							
+
 			)
 }
 
 
 }
 
+export default Contact
 
 
