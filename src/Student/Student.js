@@ -135,6 +135,10 @@ class Student extends Component {
 			          :this.state.location === 'reading'
 			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
 			          : <p> </p>}
+
+			          	<section className="Contacts">
+			          	
+			          	</section>
 			        </StudentContainer>
 			</section>
 		)
