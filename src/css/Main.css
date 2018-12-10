@@ -1,0 +1,8 @@
+.boop{
+	display: grid;
+	grid-template-rows: 83vh;
+	background-image: url('../images/castle1.png');
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: contain;
+}
