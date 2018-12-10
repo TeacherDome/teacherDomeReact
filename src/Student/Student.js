@@ -54,7 +54,6 @@ class Student extends Component {
 	}
 
 	checkCurrentStudent = () =>{
-			console.log("HERE")
 		fetch('/api/student', {
 			method: 'PUT',
 			body: JSON.stringify({
@@ -100,10 +99,6 @@ class Student extends Component {
 				key={this.props.currentStudent.studentId}
 			>
 				<p className="name"> {this.props.currentStudent.studentFirstName} { " "}{this.props.currentStudent.studentLastName}</p>
-			
-				
-			
-
 
 				 <StudentOptions changeLocation={this.changeLocation} />
 				 <br/>
@@ -115,6 +110,7 @@ class Student extends Component {
 								studentId={this.props.currentStudent.studentId}
 								updateStudents={this.props.updateStudents}
 								checkCurrentStudent={this.checkCurrentStudent}
+								currentStudent={this.props.currentStudent}
 							/>
 
 							<br/>

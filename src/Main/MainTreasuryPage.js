@@ -4,34 +4,33 @@ import Receipts from '../Treasury/Receipts'
 import '../css/MainTreasuryPage.css'
 
 class MainTreasuryPage extends Component {
-	constructor() {
-		super()
-		this.state = {
-     	 	funds: [],
-     	 	receipts: []
-		}
-	}
+  constructor() {
+    super()
+    this.state = {
+        funds: [],
+        receipts: []
+    }
+  }
 
-	 updateFunds = newFunds => {
+   updateFunds = newFunds => {
     this.setState({ funds: newFunds })
   }
 
-	 updateReceipts = newReciepts => {
+   updateReceipts = newReciepts => {
     this.setState({ receipts: newReciepts })
   }
 
 
 render(){
-	return (
-		<section className="MainTreasuryPage">
+  return (
+    <section className="MainTreasuryPage">
      <Treasury treasuryFunds = {this.state.funds} />
      <Receipts allReceipts={this.state.receipts} updateFunds={this.updateFunds} updateReceipts={this.updateReceipts} treasuryFunds = {this.state.funds}/>
      </section>
      )
-	}
+  }
 }
 
 export default MainTreasuryPage
-
 
 
