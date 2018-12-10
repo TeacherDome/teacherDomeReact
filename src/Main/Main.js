@@ -1,8 +1,8 @@
 import React from 'react'
-
+import '../css/Main.css'
 const Main = ({changeLocation}) => {
 	return (
-      <h1>This is the main Page</h1>
+      <div className="boop"></div>
      
    
 	)
