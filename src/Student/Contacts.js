@@ -5,6 +5,7 @@ import Contact from './Contact'
 class ContactPage  extends Component {
 	constructor(props) {
 		super(props) 
+		this.state = {
 		cctFirstName: '',
 			cctLastName: '',
 			cctRelationship: '',
@@ -16,7 +17,9 @@ class ContactPage  extends Component {
 			cctCellPhoneNumber: '',
 			cctHomPhoneNumber: '',
 			cctWorkPhoneNumber: '',
-			cctPriority: ''
+			cctPriority: '',
+			cctStudentId: ''
+		}
 	}
 
 	componentDidMount() {
@@ -24,29 +27,21 @@ class ContactPage  extends Component {
 	}
 
 	getContacts = () => {
-		api(`http://localhost:8080/api/Contacts`)
-		.then(contacts => {
-			contacts.forEach( contact => {
-				if(contact.student.studentId === this.props.studentId) {
-					this.setState({
-						cctFirstName: contact.contactFirstName,
-						cctLastName: contact.contactLastName,
-						cctRelationship: contact.contactRelationship,
-						cctStreet: contact.contactStreet,
-						cctCity: contact.contactCity,
-						cctState: contact.contactState,
-						cctZipCode: contact.contactZipCode,
-						cctEmail: contact.contactEmail,
-						cctCellPhoneNumber: contact.contactCellPhoneNumber,
-						cctHomPhoneNumber: contact.contactHomePhoneNumber,
-						cctWorkPhoneNumber: contact.contactWorkPhoneNumber,
-						cctPriority: contact.contactPriority
-					})
-				}
+		fetch(`http://localhost:8080/api/ContactsById`, {
+			method: 'GET',
+			body: JSON.stringify({
+				studentId: studentIdToUpdate
 			})
+			.then()
 		})
-		}
+	}
 	
+	render() {
+   		return (
+   			<div>
+   				<p className="name"> {this.state.cctFirstName} { " "} {this.state.cctLastName}</p>
+   			</div>
+   			)}
 }
 
 export default ContactPage
