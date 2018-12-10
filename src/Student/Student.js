@@ -5,6 +5,7 @@ import UpdateStudent from './UpdateStudent'
 import ReadingChart from './ReadingChart'
 import StudentContainer from './StudentContainer'
 import StudentOptions from './StudentOptions'
+import Contacts from './Contacts'
 
 class Student extends Component {
 	constructor(props) {
@@ -21,10 +22,21 @@ class Student extends Component {
 			defaultStudentLastName: '',
 			defaultStudentSchoolIdNumber: '',
 			defaultStudentId: ''
+			},
+
+		contacts: [],
+			currentContact: {
+				currentContactFirstName: '',
+				currentContactLastName: '',
+				currentContactRelationship: '',
+				currentContactId: ''
 			}
-		
 		}
 	}
+
+	 updateContacts = newContacts => {
+    this.setState({ contacts: newContacts })
+  }
 
 
 	toggleIsMain = () => {
@@ -130,11 +142,10 @@ class Student extends Component {
 			          ?<MathChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'reading'
 			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
+			          :this.state.location === 'contacts'
+			          ?<Contacts studentId={this.props.currentStudent.studentId} updateContacts = {this.updateContacts} />
 			          : <p> </p>}
-
-			          	<section className="Contacts">
 			          	
-			          	</section>
 			        </StudentContainer>
 			</section>
 		)

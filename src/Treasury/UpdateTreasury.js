@@ -98,7 +98,7 @@ class UpdateTreasury extends Component {
 
 	render() {
 		return (
-			<section class="update-Funds">
+			<section className="update-Funds">
 				<label>
 					{' '}
 					Add to Funds:

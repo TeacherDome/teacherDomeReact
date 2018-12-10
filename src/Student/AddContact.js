@@ -12,8 +12,8 @@ class AddContact extends Component {
 		this.clearFields();
 	}
 
-updateAllContacts = event => {
-	this.setState({ updateAllContacts(response) })
+updateAllContacts = response => {
+	this.props.updateAllContacts(response)
 }
 
 updateCctFirstName = event => {
