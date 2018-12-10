@@ -6,19 +6,7 @@ class ContactPage  extends Component {
 	constructor(props) {
 		super(props) 
 		this.state = {
-		cctFirstName: '',
-			cctLastName: '',
-			cctRelationship: '',
-			cctStreet: '',
-			cctCity: '',
-			cctState: '',
-			cctZipCode: '',
-			cctEmail: '',
-			cctCellPhoneNumber: '',
-			cctHomPhoneNumber: '',
-			cctWorkPhoneNumber: '',
-			cctPriority: '',
-			cctStudentId: ''
+		contacts: []
 		}
 	}
 
@@ -27,21 +15,35 @@ class ContactPage  extends Component {
 	}
 
 	getContacts = () => {
-		fetch(`http://localhost:8080/api/ContactsById`, {
-			method: 'GET',
+		fetch('http://localhost:8080/api/ContactsById', {
+			method: 'PUT',
 			body: JSON.stringify({
-				studentId: studentIdToUpdate
+				studentId: this.props.studentId
 			})
-			.then()
+		})
+		.then(res => res.json())
+		.then(contacts =>  {
+			this.setState({contacts: contacts})
 		})
 	}
 	
 	render() {
    		return (
    			<div>
-   				<p className="name"> {this.state.cctFirstName} { " "} {this.state.cctLastName}</p>
+				{this.state.contacts.map((contact, index) => (
+					<section className="contactInList" key={index}>
+						<h2
+							onClick={() =>
+								this.extendContactInformation(Contact)
+							}
+						>
+							{contact.contactFirstName} {contact.contactLastName}
+						</h2>
+					</section>
+				))}
    			</div>
-   			)}
+   		)
+   	}
 }
 
 export default ContactPage
