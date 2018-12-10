@@ -23,6 +23,10 @@
   	grid-template-rows: 1.5fr 1fr;
   	margin: 0 auto;
 	max-width: 1000px;
+	background-image: url('../images/header1.png');
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: contain;
 	
 }
 .banner{

@@ -4,7 +4,7 @@ import '../css/Header.css'
 const Header = ({changeLocation}) => {
 	return (
 		<header className="header">
-      <h1 className="banner">Teachers</h1>
+      <h1 className="banner">TeacherdDome</h1>
       <nav>
         <ul className="navigation">
           <li className="bannerNavigation" onClick={() => changeLocation('home')}>Home</li>
