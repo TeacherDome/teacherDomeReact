@@ -21,7 +21,7 @@ class TeacherResourcePage  extends Component {
 	})
 }
 
-changeTeacherResourceFolder(passedFolder) {
+changeTeacherResourceFolderInfo(passedFolder) {
 		this.props.changeTeacherResourcePage(passedFolder)
 	}
 
@@ -40,7 +40,7 @@ render() {
 					<section className="folderInList" key={index}>
 					<h2
 							onClick={() =>
-								this.changeTeacherResourceFolder(resourceFolders)
+								this.changeTeacherResourceFolderInfo(resourceFolders)
 							}
 						>
 							{resourceFolders.resourceFolderName}

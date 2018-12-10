@@ -6,19 +6,23 @@ class Folder extends Component {
 		super(props)
 		this.state = {
 			}
+		
 		}
+
+		updateCurrentFolder = response => {
+		this.props.changeFolder(response)
 	}
 
-checkCurrentFolder = () =>{
+	checkCurrentFolder = () =>{
 			console.log("HERE")
 		fetch('/api/Folder', {
 			method: 'PUT',
 			body: JSON.stringify({
-				folderId: this.props.currentFolder.folderId
+				folderId: this.props.currentFolder.currentFolderId
 			})
 		})
 			.then(res => res.json())
-			.then(teacherResourceFolders => this.updateCurrentStudent(teacherResourceFolders))
+			.then(TeacherResourceFolders => this.updateCurrentFolder(TeacherResourceFolders))
 	}
 
 	render() {
@@ -30,8 +34,9 @@ checkCurrentFolder = () =>{
 			<p className="name"> {this.props.currentFolder.currentFolderName}</p>
 
 			</section>
-		))
+		)
 	}
 }
+	
 
 export default Folder

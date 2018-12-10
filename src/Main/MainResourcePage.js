@@ -7,11 +7,11 @@ class MainStudentPage extends Component {
 	constructor() {
 		super()
 		this.state = {
-     teacherResourceFolders: [],
-     	currentFolder: {
-     		currentFolderName: "",
-     		currentFolderId: ""
-     	}
+	     teacherResourceFolders: [],
+	     	currentFolder: {
+	     		currentFolderName: "",
+	     		currentFolderId: ""
+     		}
 
       	}
 	}
@@ -20,18 +20,18 @@ class MainStudentPage extends Component {
     	this.setState({ teacherResourceFolders: newFolder })
   }
 
+	changeTeacherResourcePage = passedFolder => {
+		this.setState({ currentFolder: passedFolder })
+	}
 	
 	render(){
 		return (
 			<section className= "MainResourcePage">
 	    	  <h1>This is the resource Page</h1>
 	    	 <TeacherResourcePage teacherResourcePage = {this.state.teacherResourceFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} updateFolders={this.updateFolders} />
-	    	 <Folder updateFolders = {this.updateFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} currentFolder= {currentFolder} />
+	    	 <Folder updateFolders = {this.updateFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} currentFolder= {this.state.currentFolder} />
 	   		</section>
 		)	
-	}
-	changeTeacherResourcePage = passedFolder => {
-		this.setState({ currentFolder: passedFolder })
 	}
 
 }
