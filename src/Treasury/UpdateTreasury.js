@@ -151,7 +151,7 @@ class UpdateTreasury extends Component {
 					/>
 				</label>
 				<button className="fundsSubmit" onClick={this.onClickSub}>Submit</button>
-
+				
 			</section>
 		)
 	}
