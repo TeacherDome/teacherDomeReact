@@ -6,9 +6,9 @@ class TeacherResourcePage  extends Component {
 	constructor(props) {
 		super(props) 
 		this.state = {
-  
 
-      	}
+
+		}
 	}
 	
 	getTeacherResorce = () => {
@@ -16,12 +16,12 @@ class TeacherResourcePage  extends Component {
 			const newFolder = this.props.teacherResourcePage
 			teacherResourceFolders.forEach(teacherResource =>{
 				newFolder.push(teacherResource)
-		})
+			})
 			this.setState({ teacherResourceFolders: newFolder })
-	})
-}
+		})
+	}
 
-changeTeacherResourceFolderInfo(passedFolder) {
+	changeTeacherResourceFolderInfo(passedFolder) {
 		this.props.changeTeacherResourcePage(passedFolder)
 	}
 
@@ -30,28 +30,28 @@ changeTeacherResourceFolderInfo(passedFolder) {
 	}
 
 
-render() {
-	
+	render() {
+
 		return (
 			<section className="folder-list">
 			<h2> Folder List </h2>
-			{console.log(this.props.teacherResourcePage)}
 			{this.props.teacherResourcePage.map((resourceFolders, index) => (
-					<section className="folderInList" key={index}>
-					<h2
-							onClick={() =>
-								this.changeTeacherResourceFolderInfo(resourceFolders)
-							}
-						>
-							{resourceFolders.resourceFolderName}
-						</h2>
-					</section>
+				<section className="folderInList" key={index}>
+				<h2
+				onClick={() => {
+					this.changeTeacherResourceFolderInfo(resourceFolders)
+					console.log(resourceFolders)}
+				}
+				>
+				{resourceFolders.resourceFolderName}
+				</h2>
+				</section>
 
-			))}
-			<AddFolder updateFolders={this.props.updateFolders} />
-			</section>
-		)
-	}
-}
+				))}
+				<AddFolder updateFolders={this.props.updateFolders} />
+				</section>
+				)
+			}
+		}
 
-export default TeacherResourcePage
+		export default TeacherResourcePage

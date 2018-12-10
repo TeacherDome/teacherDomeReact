@@ -9,8 +9,8 @@ class MainStudentPage extends Component {
 		this.state = {
 	     teacherResourceFolders: [],
 	     	currentFolder: {
-	     		currentFolderName: "",
-	     		currentFolderId: ""
+	     		resourceFolderName: "asg",
+	     		resourceFolderId: ""
      		}
 
       	}
@@ -22,6 +22,7 @@ class MainStudentPage extends Component {
 
 	changeTeacherResourcePage = passedFolder => {
 		this.setState({ currentFolder: passedFolder })
+		console.log("sup")
 	}
 	
 	render(){
