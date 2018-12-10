@@ -7,7 +7,7 @@ class Contact extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			cctFistName: '',
+			cctFirstName: '',
 			cctLastName: '',
 			cctRelationship: '',
 			cctStreet: '',
@@ -20,7 +20,7 @@ class Contact extends Component {
 			cctWorkPhoneNumber: '',
 			cctPriority: '',
 		defaultContact: {
-			defaultCctFistName: '',
+			defaultCctFirstName: '',
 			defaultCctLastName: '',
 			defaultCctRelationship: ''
 			}
