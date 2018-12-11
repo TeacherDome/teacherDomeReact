@@ -225,14 +225,17 @@ class UpdateStudent extends Component {
 	render() {
 		return (
 			<section className="update-student">
+				<section className="student-info-section">
 			<p>{"Student School ID: "}{this.props.currentStudent.studentSchoolIdNumber}</p>
 				<p>{"Student Date of Birth: "}{this.props.currentStudent.studentDateOfBirth}</p>
 				<p>{"Student Health Notes: "}{this.props.currentStudent.studentHealthNotes}</p>
 				<p>{"Student Progress Notes: "}{this.props.currentStudent.studentProgressNotes}</p>
 				<p>{"Student Comments : "}{this.props.currentStudent.studentComments}</p>
-
+				</section>
 			<br/>
 			<h1 className="update-student-h1">Update Student Information</h1>
+			<section className="inputOrganize">
+			
 			<br/>
 				<section className="studentInputs">
 				<label className="InputUpdate">
@@ -265,7 +268,8 @@ class UpdateStudent extends Component {
 					/>
 					<button className="studentSubmit1" onClick={this.onClickLastName}>Submit</button>
 				</label>
-				
+				</section>
+				<section className="inputOrganize1">
 				<br/>
 				<br/>
 				<label className="InputUpdate">
@@ -296,13 +300,14 @@ class UpdateStudent extends Component {
 					/>
 					<button className="studentSubmit" onClick={this.onClickUpdateStudendBirthDate}>Submit</button>
 				</label>
-
+				</section>
 				<br/>
 				<br/>
-				<label className="InputUpdate">
+				<label>
 					{' '}
 					Student Health Information: 
 					<input
+						className="InputUpdateField"
 						type="text"
 						name="studentHealthNotes"
 						id="studentHealthNotes"
@@ -320,6 +325,7 @@ class UpdateStudent extends Component {
 					Student Progress Information: 
 					<input
 						type="text"
+						className="InputUpdateField"
 						name="studentProgressNotes"
 						id="studentProgressNotes"
 						value={this.state.studentProgressNotes}
@@ -335,6 +341,7 @@ class UpdateStudent extends Component {
 					Student Progress Information: 
 					<input
 						type="text"
+						className="InputUpdateField"
 						name="studentComments"
 						id="studentComments"
 						value={this.state.studentComments}
@@ -343,8 +350,8 @@ class UpdateStudent extends Component {
 					<button className="studentSubmit" onClick={this.onClickUpdateStudendComments}>Submit</button>
 				</label>
 				</section>
-			</section>
-		)
+				</section>
+				)
 	}
 }
 

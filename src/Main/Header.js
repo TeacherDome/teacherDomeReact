@@ -1,10 +1,21 @@
 import React from 'react';
 import '../css/Header.css'
 
+
 const Header = ({changeLocation}) => {
-	return (
-		<header className="header">
-      <h1 className="banner">TeacherDome</h1>
+  return (
+    <section className="mainHeader">
+    <header className="header">
+     
+      <h1 className="banner">
+      <div className="art"></div>
+      <div className="bannerText">TeacherdDome</div>
+
+       <div className="art"></div>
+
+
+       </h1>
+      
       <nav>
         <ul className="navigation">
           <li className="bannerNavigation" onClick={() => changeLocation('home')}>Home</li>
@@ -14,7 +25,8 @@ const Header = ({changeLocation}) => {
         </ul>
       </nav>
     </header>
-	)
+    </section>
+  )
 }
 
 export default Header

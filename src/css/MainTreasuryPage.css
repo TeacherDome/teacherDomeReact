@@ -1,16 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: var(--primary-color);
-
-}
-.clearfix::after {
-  clear: both;
-  content: '';
-  display: block;
-}
-
 
 :root { 
     --primary-color: #FFFFF3;
@@ -20,19 +7,26 @@
 
 .MainTreasuryPage {
   display: grid;
-  grid-template-rows: 1fr 4fr;
-  margin: 0 auto;
-  max-width: 1200px;
+  grid-template-rows: 1fr 90vh;
+  background-image: url('../images/wildtextures-handmade-warm-flower-paper3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+
 }
 .funds{
   display: flex;
   justify-content: center;
-
+   border-width: 6px;
   border-style: double;
   border-radius: 5px;
   margin: 2px;
   padding: 10px;
   border-color:  var(--secondary-color);
+      background-image: url('../images/wildtextures-handmade-warm-flower-paper7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 .receipts{
@@ -40,6 +34,7 @@
   justify-content: center;
   margin: 2px;
   padding: 10px;
+
  
 }
 
@@ -49,4 +44,9 @@
   border-style: double;
   border-radius: 5px;
   border-color:  var(--secondary-color);
+   border-width: 6px;
+    background-image: url('../images/wildtextures-handmade-warm-flower-paper7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+
 }

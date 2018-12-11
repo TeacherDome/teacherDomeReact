@@ -34,7 +34,9 @@ class TeacherResourcePage  extends Component {
 
 		return (
 			<section className="folder-list">
-			<h2> Folder List </h2>
+			<h2 className="resourceHeader">Teacher Resources</h2>
+			<h2 className="folders"> Folder List </h2>
+			<br />
 			{this.props.teacherResourcePage.map((resourceFolders, index) => (
 				<section className="folderInList" key={index}>
 				<h2
@@ -45,10 +47,12 @@ class TeacherResourcePage  extends Component {
 				>
 				{resourceFolders.resourceFolderName}
 				</h2>
+				<br />
 				</section>
-
+				
 				))}
 				<AddFolder updateFolders={this.props.updateFolders} />
+
 				</section>
 				)
 			}

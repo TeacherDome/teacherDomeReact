@@ -1,0 +1,64 @@
+.MainResourcePage {
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 100vw;
+  background-image: url('../images/wildtextures-handmade-warm-flower-paper3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.folderInList{
+  display: flex;
+  justify-content: center;
+}
+
+.folders{
+  display: flex;
+  justify-content: center;
+    text-decoration: underline;
+  text-decoration-color: #EBC222;
+
+}
+
+.folderInList{
+  margin: 10px;
+  padding: 10px;
+
+}
+
+.resourceHeader{
+    display: flex;
+  justify-content: center;
+   margin: 10px;
+  padding: 10px;
+  border-style: double;
+  border-radius: 5px;
+  border-color:  var(--secondary-color);
+   border-width: 6px;
+    background-image: url('../images/wildtextures-handmade-warm-flower-paper7.jpg');
+  background-position: center;font-size: 1.7rem;
+  background-repeat: no-repeat;
+}
+
+.add-folders{
+      display: flex;
+  justify-content: center;
+   margin: 10px;
+  padding: 10px;
+  border-style: double;
+  border-radius: 5px;
+  border-color:  var(--secondary-color);
+   border-width: 6px;
+    background-image: url('../images/wildtextures-handmade-warm-flower-paper7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#folderSection{
+       display: flex;
+  justify-content: center;
+  font-size: 1.7rem;
+}
