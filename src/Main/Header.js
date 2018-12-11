@@ -9,7 +9,7 @@ const Header = ({changeLocation}) => {
      
       <h1 className="banner">
       <div className="art"></div>
-      <div className="bannerText">TeacherdDome</div>
+      <div className="bannerText">Teacher Dome</div>
 
        <div className="art"></div>
 
