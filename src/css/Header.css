@@ -1,9 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
-}
 .clearfix::after {
 	clear: both;
 	content: '';
@@ -17,22 +11,43 @@
   	--tertiary-background-color: #6177F5;
 }
 
+.mainHeader{
+	background-image: url('../images/wildtextures-handmade-warm-flower-paper3.jpg');
+	background-position: center;
+ 	background-repeat: no-repeat;
+}
 
 .header{
 	display: grid;
   	grid-template-rows: 1.5fr 1fr;
   	margin: 0 auto;
 	max-width: 1000px;
-	background-image: url('../images/header1.png');
+	background-image: url('../images/wildtextures-handmade-warm-flower-paper4.jpg');
 	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: contain;
-	
+ 	background-repeat: no-repeat;
+  
 }
 .banner{
 	margin:15px;
+	display: grid;
+  	grid-template-columns: .5fr 1.5fr .5fr;
+  	text-decoration: underline;
+
+
+}
+
+.bannerText{
 	display: flex;
 	justify-content: center;
+
+
+}
+
+.art{
+	background-image: url('../images/header1_1.png');
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: contain;
 
 }
 .bannerNavigation{
@@ -47,11 +62,18 @@
   	border-color:  var(--secondary-color);
   	padding: 3px;
   	margin: 5px;
+  	background-image: url('../images/wildtextures-handmade-warm-flower-paper5.jpg');
+	background-position: center;
+ 	background-repeat: no-repeat;
+ 	 border-width: 6px;
 
 }
 
 .bannerNavigation:hover{
- border-width: 5px;
+   background-image: url('../images/wildtextures-handmade-warm-flower-paper5hover.jpg');
+	background-position: center;
+ 	background-repeat: no-repeat;
+
 }
 .navigation{
 	display: grid;

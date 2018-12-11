@@ -28,8 +28,10 @@ class Receipts extends Component {
 					</section>
 				)}
 				<section className="UpdateTreasury">
-				<UpdateTreasury updateFunds={this.props.updateFunds} updateReceipts={this.props.updateReceipts} treasuryFunds = {this.funds}/>
+				<UpdateTreasury updateFunds={this.props.updateFunds} updateReceipts={this.props.updateReceipts} treasuryFunds = {this.props.funds}/>
+				
 				</section>
+
 			</section>
 		)
 	}

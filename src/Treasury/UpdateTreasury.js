@@ -98,7 +98,7 @@ class UpdateTreasury extends Component {
 
 	render() {
 		return (
-			<section class="update-Funds">
+			<section className="update-Funds">
 				<label>
 					{' '}
 					Add to Funds:
@@ -151,7 +151,7 @@ class UpdateTreasury extends Component {
 					/>
 				</label>
 				<button className="fundsSubmit" onClick={this.onClickSub}>Submit</button>
-
+				
 			</section>
 		)
 	}

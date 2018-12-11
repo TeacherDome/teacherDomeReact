@@ -38,7 +38,8 @@ class AddFolder extends Component {
 
 	render() {
 		return (
-			<section className="add-folder">
+			<section className="add-folders">
+			<br / >
 				<label>
 					Folder Name:{' '}
 					<input
