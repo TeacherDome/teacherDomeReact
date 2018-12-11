@@ -17,23 +17,29 @@ class MathChart extends Component{
 	}
 
 	getChartData(){
-		let mathScores = [];
-		let mathDates = [];
-		api(`http://localhost:8080/api/math-scores`)
-		.then(scores => {
-			scores.forEach( score => {
-				if(score.student.studentId == this.props.studentId) {
-					mathScores.push(score.score);
-					mathDates.push(score.date);
-				}
-			});
-		});
+		let scoresOnChart = [];
+		let datesOnChart = [];
+		fetch(`http://localhost:8080/api/math-scores`, {
+			method: 'PUT',
+			body: JSON.stringify({
+				studentId: this.props.studentId
+			})
+		})
+		.then(res => res.json())
+		.then(mathScores => {
+			mathScores.forEach( mathScore => {
+				scoresOnChart.push(mathScore.score);
+				scoresOnChart.push(12234);
+				datesOnChart.push(mathScore.date);
+				})
+			})
+		
 
 		this.setState({
 			chartData:{
-				labels:mathDates,
+				labels:datesOnChart,
 				datasets:[{
-		            data: mathScores,
+		            data: scoresOnChart,
 		            backgroundColor: [
 		                'rgba(54, 162, 235, 0.2)',
 		            ],
