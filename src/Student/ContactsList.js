@@ -14,6 +14,10 @@ class ContactPage  extends Component {
 		this.getContacts();
 	}
 
+	// displayContactInfo() {
+	// 	display <Contact currentContact=contact />
+	// }
+
 	getContacts = () => {
 		fetch('http://localhost:8080/api/ContactsById', {
 			method: 'PUT',
@@ -33,12 +37,11 @@ class ContactPage  extends Component {
 				{this.state.contacts.map((contact, index) => (
 					<section className="contactInList" key={index}>
 						<h2
-							onClick={() =>
-								this.extendContactInformation(Contact)
-							}
+							// onClick={ () =>  }
 						>
-							{contact.contactFirstName} {contact.contactLastName} {contact.contactRelationship}
+							{contact.contactFirstName} {contact.contactLastName} - Relationship: {contact.contactRelationship}
 						</h2>
+						<Contact currentContact={contact} />
 					</section>
 				))}
    			</div>
