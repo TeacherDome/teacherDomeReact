@@ -40,6 +40,7 @@ class MainStudentPage extends Component {
 			/>
 	    	
 	    	<Folder
+	    		links={this.state.links}
 	    		updateLinks={this.updateLinks} 
 	    		updateFolders={this.updateFolders} 
 	    		changeTeacherResourcePage={this.changeTeacherResourcePage}
