@@ -336,7 +336,7 @@ class UpdateStudent extends Component {
 				<br/>
 				<label className="InputUpdate">
 					{' '}
-					Student Progress Information: 
+					Student Comments: 
 					<input
 						type="text"
 						className="InputUpdateField"

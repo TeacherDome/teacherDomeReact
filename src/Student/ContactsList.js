@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import api from '../api'
 import Contact from './Contact'
+import AddContact from './AddContact'
 
-class ContactPage  extends Component {
+class ContactList  extends Component {
 	constructor(props) {
 		super(props) 
 		this.state = {
-		contacts: []
 		}
 	}
 
@@ -14,11 +14,8 @@ class ContactPage  extends Component {
 		this.getContacts();
 	}
 
-	// displayContactInfo() {
-	// 	display <Contact currentContact=contact />
-	// }
-
 	getContacts = () => {
+		const that = this
 		fetch('http://localhost:8080/api/ContactsById', {
 			method: 'PUT',
 			body: JSON.stringify({
@@ -27,14 +24,14 @@ class ContactPage  extends Component {
 		})
 		.then(res => res.json())
 		.then(contacts =>  {
-			this.setState({contacts: contacts})
+			that.props.updateContacts(contacts)
 		})
 	}
 	
 	render() {
    		return (
    			<div>
-				{this.state.contacts.map((contact, index) => (
+				{this.props.contacts.map((contact, index) => (
 					<section className="contactInList" key={index}>
 						<h2
 							// onClick={ () =>  }
@@ -44,9 +41,10 @@ class ContactPage  extends Component {
 						<Contact currentContact={contact} />
 					</section>
 				))}
+				<AddContact updateContacts={this.props.updateContacts} contactStudentId={this.props.studentId}/>
    			</div>
    		)
    	}
 }
 
-export default ContactPage
+export default ContactList
