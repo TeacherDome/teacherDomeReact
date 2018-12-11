@@ -8,11 +8,12 @@ class Links extends Component {
 		}	
 	}
 
-render {
+render() {
 	return (
 		<section>
-			this.props.links.map((link,index) =>(
-
+		<h2 className="LinksList">Links</h2>
+			{this.props.links.map((link,index) =>(
+				<section className="LinkList" key={index}>
 				<a href={link.resourceLinkName} >
 					{link.resourceLinkName}
 				</a>
@@ -20,8 +21,9 @@ render {
 				<p>
 					{link.resourceLinkDescription}
 				</p>
-				))
-		</section
+				</section>
+				))}
+		</section>
 		)
 	}
 }
