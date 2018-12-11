@@ -26,6 +26,10 @@ class ContactPage  extends Component {
 			this.setState({contacts: contacts})
 		})
 	}
+
+	extendContactInformation(passedContact) {
+		this.props.extendContactInformation(passedContact)
+	}
 	
 	render() {
    		return (
@@ -34,10 +38,10 @@ class ContactPage  extends Component {
 					<section className="contactInList" key={index}>
 						<h2
 							onClick={() =>
-								this.extendContactInformation(Contact)
+								this.extendContactInformation(contact)
 							}
 						>
-							{contact.contactFirstName} {contact.contactLastName} {contact.contactRelationship}
+							{contact.contactFirstName} {contact.contactLastName} - Relationship: {contact.contactRelationship}
 						</h2>
 					</section>
 				))}
