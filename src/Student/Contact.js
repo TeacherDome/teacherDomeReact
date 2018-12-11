@@ -7,66 +7,24 @@ class Contact extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			cctFirstName: '',
-			cctLastName: '',
-			cctRelationship: '',
-			cctStreet: '',
-			cctCity: '',
-			cctState: '',
-			cctZipCode: '',
-			cctEmail: '',
-			cctCellPhoneNumber: '',
-			cctHomPhoneNumber: '',
-			cctWorkPhoneNumber: '',
-			cctPriority: '',
-		defaultContact: {
-			defaultCctFirstName: '',
-			defaultCctLastName: '',
-			defaultCctRelationship: ''
 			}
 		}
+
+
+
+	render() {
+		return (
+			<section id="contactSection">		
+			       <h1> Street:{' '}{this.props.currentContact.contactStreet}</h1> 
+			       <h1>	City:{' '}{this.props.currentContact.contactCity}, {this.props.currentContact.contactState} {this.props.currentContact.contactZipCode}</h1>  			
+				   <h1>Email:{' '}{this.props.currentContact.contactEmail}</h1> 
+				   <h1>Cell Phone:{' '}{this.props.currentContact.contactCellPhoneNumber}</h1> 
+				   <h1>Home Phone:{' '}{this.props.currentContact.contactHomePhoneNumber}</h1> 
+				   <h1>Work Phone:{' '}{this.props.currentContact.contactWorkPhoneNumber}</h1> 
+
+			</section>
+		)
 	}
-
-	updateAllContacts = response => {
-		this.props.updateContacts(response)
-	}
-
-	updateCurrentContact = response => {
-		this.props.changeContact(response)
-	}
-
-	defaultCurrentContact = () => {
-			this.props.changeContact(this.state.defaultContact)
-		}
-
-	checkCurrentContact = () => {
-		console.log("Here's your contact")
-		fetch('/api/contact', {
-			method: 'PUT',
-			body: JSON.stringify({
-				contactId: this.props.currentContact.contactId
-			})
-		})
-		.then(res => res.json())
-			.then(contacts => this.updateCurrentContact(contacts))
-	}
-
-render() {
-	return (
-		<section id="contactSection">
-				
-				<p className="name"> {this.props.currentContact.contactFirstName} { " "} {this.props.currentStudent.contactLastName}</p>		
-				
-		          			
-		</section>
-							
-
-			)
-}
-
-
 }
 
 export default Contact
-
-
