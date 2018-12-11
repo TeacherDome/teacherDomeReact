@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import api from '../api'
 import AddLink from './AddLink'
+import Links from './Links'
 
 class Folder extends Component {
 	constructor(props) {
@@ -23,6 +24,9 @@ class Folder extends Component {
 			<p className="folderName"> {this.props.currentFolder.resourceFolderName}</p>
 
 			</section>
+			<Links
+				links={this.props.links}
+			/>
 			<AddLink
 				updateLinks={this.props.updateLinks}
 				currentFolder={this.props.currentFolder}
