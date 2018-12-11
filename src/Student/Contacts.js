@@ -37,7 +37,7 @@ class ContactPage  extends Component {
 								this.extendContactInformation(Contact)
 							}
 						>
-							{contact.contactFirstName} {contact.contactLastName}
+							{contact.contactFirstName} {contact.contactLastName} {contact.contactRelationship}
 						</h2>
 					</section>
 				))}
