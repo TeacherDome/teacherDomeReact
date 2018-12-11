@@ -3,7 +3,6 @@ import React from 'react'
 const StudentOptions = ({changeLocation}) => {
 	return (
 		<header className="options">
-      <h1>Student</h1>
       <nav>
         <ul className="studentNav">
 

@@ -18,7 +18,7 @@ class Folder extends Component {
 			id= 'folderSection'
 			key= {this.props.currentFolder.resourceFolderId}
 			>
-			<p className="name"> {this.props.currentFolder.resourceFolderName}</p>
+			<p className="folderName"> {this.props.currentFolder.resourceFolderName}</p>
 
 			</section>
 			)
