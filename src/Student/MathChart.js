@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
-import api from '../api'
+import AddMath from './AddMath'
 
 class MathChart extends Component{
 	constructor(props){
@@ -16,7 +16,7 @@ class MathChart extends Component{
 		console.log()
 	}
 
-	getChartData(){
+	getChartData = () => {
 		let scoresOnChart = [];
 		let datesOnChart = [];
 		fetch(`http://localhost:8080/api/math-scores`, {
@@ -29,11 +29,10 @@ class MathChart extends Component{
 		.then(mathScores => {
 			mathScores.forEach( mathScore => {
 				scoresOnChart.push(mathScore.score);
-				scoresOnChart.push(12234);
 				datesOnChart.push(mathScore.date);
 				})
 			})
-		
+		console.log(this.props.studentId)
 
 		this.setState({
 			chartData:{
@@ -70,6 +69,7 @@ class MathChart extends Component{
    						}
    					}}
    				/>
+				<AddMath getChartData={this.getChartData} studentId={this.props.studentId} />
    			</div>
 
    	)}		
