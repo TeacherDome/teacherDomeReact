@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TeacherResourcePage from '../Resources/TeacherResourcePage'
 import Folder from '../Resources/Folder'
 
-
+import '../css/MainResourcePage.css'
 class MainStudentPage extends Component {
 	constructor() {
 		super()
@@ -28,8 +28,7 @@ class MainStudentPage extends Component {
 	render(){
 		return (
 			<section className= "MainResourcePage">
-	    	  <h1>This is the resource Page</h1>
-	    	 <TeacherResourcePage teacherResourcePage = {this.state.teacherResourceFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} updateFolders={this.updateFolders} />
+			<TeacherResourcePage teacherResourcePage = {this.state.teacherResourceFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} updateFolders={this.updateFolders} />
 	    	 <Folder updateFolders = {this.updateFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} currentFolder= {this.state.currentFolder} />
 	   		</section>
 		)	

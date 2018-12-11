@@ -1,8 +1,17 @@
-.boop{
-	display: grid;
-	grid-template-rows: 83vh;
-	background-image: url('../images/castle1.png');
+.mainPage{
+	display: flex;
+	justify-content: center;
+ 	box-sizing: border-box;
+  	margin: 0;
+  	padding: 0;
+	background-image: url('../images/wildtextures-handmade-warm-flower-paper3.jpg');
 	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: contain;
+ 	background-repeat: no-repeat;
+ 	
+}
+
+
+.castle{
+height:70%;
+width: 70%;
 }

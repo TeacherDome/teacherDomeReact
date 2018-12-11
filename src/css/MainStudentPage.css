@@ -1,10 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: var(--primary-color);
-
-}
 .clearfix::after {
   clear: both;
   content: '';
@@ -25,10 +18,15 @@
   margin: 0 auto;
   padding: 40px;
   max-width: 100vw;
+  background-image: url('../images/wildtextures-handmade-warm-flower-paper3.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .class-list {
-  background-color: var(--secondary-color);
+  background-image: url('../images/wildtextures-handmade-warm-flower-paper5.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .class-list-header{
@@ -36,11 +34,11 @@
   justify-content: center;
   text-decoration: underline;
   font-size: 1.7rem;
-  border-style: solid;
-  border-radius: 25px;
   margin: 2px;
   padding: 10px;
-  border-color:  var(--secondary-color);
+  border-style: double;
+ border-color:  var(--secondary-color);
+ border-width: 6px;
 }
 
 #current-student {
@@ -48,19 +46,30 @@
   flex-direction: column;
   justify-content: center;
 
+
 }
 
+#studentSection{
+   background-image: url('../images/wildtextures-handmade-warm-flower-paper7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .name {
   padding: 1rem;
   font-size: 3rem;
   display: flex;
   justify-content: center;
+   background-image: url('../images/wildtextures-handmade-warm-flower-paper5.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+
 
 }
 
 .studentInList {
   padding: 2rem;
   transition: 0.3s;
+
   
 }
 
@@ -68,19 +77,27 @@
   
   text-decoration: underline;
   font-style: italic;
+     background-image: url('../images/wildtextures-handmade-warm-flower-paper5hover.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
 
 }
 
 .add-student{
  margin: 5px;
  padding: 10px;
-border-radius: 25px;
+border-style: double;
+ border-color:  var(--secondary-color);
+ border-width: 6px;
+
+
 }
 .studentNav{
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 5px;
+
 
 }
 .option{
@@ -90,12 +107,15 @@ border-radius: 25px;
   border-style: double;
   border-color:  var(--secondary-color);
   margin-left: 3px;
+   border-width: 6px;
   padding: 5px;
+
 }
 
 .update-student-h1{
    display: flex;
   justify-content: space-around;
+
 }
 
 .studentInputs{
@@ -115,15 +135,39 @@ button{
 .InputUpdate{
   margin: 5px;
 
+
 }
 
 .retired-box{
   margin: 5px;
   margin-top: 3px;
 
+
 }
 
 .retireFields{
    display: flex;
   justify-content: center;
+
   }
+
+.inputOrganize{
+
+}
+
+.inputOrganize1{
+    display: flex;
+    justify-content: center;
+}
+
+.InputUpdateField{
+ width: 100%;
+  height: 100px;
+}
+
+.student-info-section{
+  margin-left: 20px;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    
+}

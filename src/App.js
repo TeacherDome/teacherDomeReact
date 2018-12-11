@@ -5,7 +5,7 @@ import Header from './Main/Header'
 import Main from './Main/Main'
 import MainResourcePage from './Main/MainResourcePage'
 import MainTreasuryPage from './Main/MainTreasuryPage'
-
+import  './css/App.css'
 
 class App extends Component {
     constructor() {
