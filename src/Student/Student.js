@@ -5,6 +5,9 @@ import UpdateStudent from './UpdateStudent'
 import ReadingChart from './ReadingChart'
 import StudentContainer from './StudentContainer'
 import StudentOptions from './StudentOptions'
+
+import Assignments from './Assignments'
+
 import Contacts from './ContactsList'
 
 class Student extends Component {
@@ -138,6 +141,8 @@ class Student extends Component {
 							</p>
 							</section>
 						</section>
+					 :this.state.location === 'grades'
+			          ?<Assignments studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'math'
 			          ?<MathChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'reading'

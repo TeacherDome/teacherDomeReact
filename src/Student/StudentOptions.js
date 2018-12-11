@@ -8,6 +8,7 @@ const StudentOptions = ({changeLocation}) => {
 
           <li className="option" onClick={() => changeLocation('info')}>Information</li>
           <li className="option" onClick={() => changeLocation('contacts')}>Contacts</li>
+          <li className="option" onClick={() => changeLocation('grades')}>Grades</li>
           <li className="option" onClick={() => changeLocation('math')}>Math score</li>
           <li className="option" onClick={() => changeLocation('reading')}>Reading score</li>
         </ul>

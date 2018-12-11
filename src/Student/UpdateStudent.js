@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 class UpdateStudent extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {}
-		console.log(this.props)
-			this.state = {
+		this.state = {
 			firstName: '',
 			lastName: '',
 			schoolId: '',
