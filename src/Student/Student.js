@@ -5,7 +5,7 @@ import UpdateStudent from './UpdateStudent'
 import ReadingChart from './ReadingChart'
 import StudentContainer from './StudentContainer'
 import StudentOptions from './StudentOptions'
-import Contacts from './Contacts'
+import Contacts from './ContactsList'
 
 class Student extends Component {
 	constructor(props) {
