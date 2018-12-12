@@ -3,9 +3,9 @@ import '../css/Header.css'
 
 
 const Header = ({changeLocation}) => {
-	return (
+  return (
     <section className="mainHeader">
-		<header className="header">
+    <header className="header">
      
       <h1 className="banner">
       <div className="art"></div>
@@ -26,7 +26,7 @@ const Header = ({changeLocation}) => {
       </nav>
     </header>
     </section>
-	)
+  )
 }
 
 export default Header
