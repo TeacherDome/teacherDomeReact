@@ -5,7 +5,12 @@ import UpdateStudent from './UpdateStudent'
 import ReadingChart from './ReadingChart'
 import StudentContainer from './StudentContainer'
 import StudentOptions from './StudentOptions'
-import Contacts from './ContactsList'
+
+import Assignments from './Assignments'
+
+
+import ContactsList from './ContactsList'
+
 
 class Student extends Component {
 	constructor(props) {
@@ -138,12 +143,14 @@ class Student extends Component {
 							</p>
 							</section>
 						</section>
+					 :this.state.location === 'grades'
+			          ?<Assignments studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'math'
 			          ?<MathChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'reading'
 			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'contacts'
-			          ?<Contacts studentId={this.props.currentStudent.studentId} updateContacts = {this.updateContacts} />
+			          ?<ContactsList contacts={this.state.contacts} studentId={this.props.currentStudent.studentId} updateContacts = {this.updateContacts} />
 			          : <p> </p>}
 			          	
 			        </StudentContainer>
