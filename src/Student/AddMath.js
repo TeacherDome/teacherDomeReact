@@ -9,7 +9,6 @@ class AddMath extends Component{
 		}
 	}
 
-
 	submitMathData = () => {
 		const fetchThisId = this.props.studentId;
 
@@ -34,7 +33,7 @@ class AddMath extends Component{
 	updateMathScore = event => {
 		this.setState({ mathScoreFromForm: event.target.value })
 	}
-	
+
 	clearFields(){
 		this.setState({
 			mathScoreFromForm:  '',

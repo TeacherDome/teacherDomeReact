@@ -19,7 +19,7 @@ class MathChart extends Component{
 		const that = this
 		let scoresOnChart = [];
 		let datesOnChart = [];
-		return fetch(`/api/math-scores`, {
+		return fetch(`http://localhost:8080/api/math-scores`, {
 			method: 'PUT',
 			body: JSON.stringify({
 				studentId: this.props.studentId

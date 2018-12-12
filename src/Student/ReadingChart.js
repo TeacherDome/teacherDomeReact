@@ -18,7 +18,7 @@ class ReadingChart extends Component{
 		const that = this
 		let scoresOnChart = [];
 		let datesOnChart = [];
-		return fetch(`/api/reading-scores`, {
+		return fetch(`http://localhost:8080/api/reading-scores`, {
 			method: 'PUT',
 			body: JSON.stringify({
 				studentId: this.props.studentId
