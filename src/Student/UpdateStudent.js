@@ -247,7 +247,7 @@ class UpdateStudent extends Component {
 						name="StudentFirstName"
 						id="StudentFirstName"
 						value={this.state.firstName}
-						
+						className="InputUpdateField"
 						onChange={this.updateFirstName}
 
 					/>
@@ -262,6 +262,7 @@ class UpdateStudent extends Component {
 					Last Name:
 					<input
 						type="text"
+						className="InputUpdateField"
 						name="StudentLastName"
 						id="StudentlastName"
 						value={this.state.lastName}
@@ -278,6 +279,7 @@ class UpdateStudent extends Component {
 					Student School Id Num: 
 					<input
 						type="text"
+						className="InputUpdateField"
 						name="StudentSchoolIdNumber"
 						id="StudentSchoolIdNumber"
 						value={this.state.schoolId}
@@ -293,6 +295,7 @@ class UpdateStudent extends Component {
 					{' '}
 					Student Birth Date: 
 					<input
+						className="InputUpdateField"
 						type="text"
 						name="birthDate"
 						id="birthDate"
@@ -304,7 +307,7 @@ class UpdateStudent extends Component {
 				</section>
 				<br/>
 				<br/>
-				<label>
+				<label className="InputUpdateLarge">
 					{' '}
 					Student Health Information: 
 					<input
@@ -321,7 +324,7 @@ class UpdateStudent extends Component {
 
 				<br/>
 				<br/>
-				<label className="InputUpdate">
+				<label className="InputUpdateLarge">
 					{' '}
 					Student Progress Information: 
 					<input
@@ -337,7 +340,7 @@ class UpdateStudent extends Component {
 
 				<br/>
 				<br/>
-				<label className="InputUpdate">
+				<label className="InputUpdateLarge">
 					{' '}
 					Student Comments: 
 					<input
