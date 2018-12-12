@@ -29,11 +29,14 @@ class AllAssignments extends Component {
 		this.getAssingments()
 	}
 
+
+	
+
 	render() {
 
 		return (
-			<section className="class-list">
-				<h2 className="class-list-header"> Assignment List </h2>
+			<section className="assignment-list">
+				<h2 className="assignment-list-header"> Assignment List </h2>
 				{this.props.allAssignments.map((assign, index) => (
 					<section className="studentInList" key={index}>
 						<h2
