@@ -169,7 +169,7 @@ button{
 .assigments{
 
   display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
 
 }
 
@@ -179,4 +179,18 @@ button{
 border-style: double;
  border-color:  var(--secondary-color);
  border-width: 6px;
+}
+
+.assignment-list-header{
+   text-decoration-line: underline;
+  text-decoration-style: double;
+  text-decoration-color: var(--secondary-color);
+  margin-left: 15px;
+}
+
+.grade-list-header{
+   text-decoration-line: underline;
+  text-decoration-style: double;
+  text-decoration-color: var(--secondary-color);
+  margin-left: 15px;
 }
