@@ -60,6 +60,9 @@ class UpdateStudent extends Component {
 		this.state.lastName = ''
 		this.state.schoolId = ''
 		this.state.birthDate = ''
+		this.state.studentHealthNotes = ''
+		this.state.studentProgressNotes = ''
+		this.state.studentComments = ''
 	}
 
 
