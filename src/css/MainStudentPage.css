@@ -194,3 +194,28 @@ border-style: double;
   text-decoration-color: var(--secondary-color);
   margin-left: 15px;
 }
+
+.add-contact{
+    margin: 8px;
+    padding: 8px;
+
+
+}
+
+
+.contact1{
+ 
+    margin: 8px;
+}
+.contact2{
+  
+    margin: 8px;
+}
+.contacts3{
+ margin: 8px;
+    
+}
+
+.contactInList{
+  margin: 15px;
+}

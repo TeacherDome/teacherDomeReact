@@ -122,10 +122,13 @@ addContact = () => {
 render() {
 	return (
 		<section className="add-contact">
+			<br />
 		<h1>Add New Contact</h1>
+
+		<section className="contact1">
+		
 		<label>
 			First Name:{' '}
-			<br />
 			<input
 				type="text"
 				id="cctFirstName"
@@ -134,11 +137,10 @@ render() {
 				onChange={this.updateCctFirstName}
 					/>
 				</label>
-				<br />
-				<br />
+		
 				<label>
 					Last Name:{' '}
-					<br />
+					
 					<input
 						type="text"
 						id="cctLastName"
@@ -147,8 +149,7 @@ render() {
 						onChange={this.updateCctLastName}
 					/>
 				</label>
-				<br />
-				<br />
+			
 				<label>
 					Relationship to Student:{' '}
 					<input
@@ -159,8 +160,8 @@ render() {
 						onChange={this.updateCctRelationship}
 					/>
 				</label>
-				<br />
-				<br />
+				</section>
+				<section className="contact2">
 				<label>
 					Street:{' '}
 					<input
@@ -171,8 +172,7 @@ render() {
 						onChange={this.updateCctStreet}
 					/>
 				</label>
-				<br />
-				<br />
+			
 				<label>
 					City:{' '}
 					<input
@@ -183,8 +183,7 @@ render() {
 						onChange={this.updateCctCity}
 					/>
 				</label>
-				<br />
-				<br />
+			
 				<label>
 					State:{' '}
 					<input
@@ -195,8 +194,7 @@ render() {
 						onChange={this.updateCctState}
 					/>
 				</label>
-				<br />
-				<br />
+			
 				<label>
 					Zip Code:{' '}
 					<input
@@ -207,8 +205,8 @@ render() {
 						onChange={this.updateCctZipCode}
 					/>
 				</label>
-				<br />
-				<br />
+			</section>
+			<section className="contacts3">
 				<label>
 					Email:{' '}
 					<input
@@ -219,8 +217,7 @@ render() {
 						onChange={this.updateCctEmail}
 					/>
 				</label>
-				<br />
-				<br />
+		
 				<label>
 					Cell Phone:{' '}
 					<input
@@ -231,8 +228,7 @@ render() {
 						onChange={this.updateCctCellPhoneNumber}
 					/>
 				</label>
-				<br />
-				<br />
+	
 				<label>
 					Home Phone:{' '}
 					<input
@@ -243,8 +239,7 @@ render() {
 						onChange={this.updateCctHomePhoneNumber}
 					/>
 				</label>
-				<br />
-				<br />
+			
 				<label>
 					Work Phone:{' '}
 					<input
@@ -255,20 +250,19 @@ render() {
 						onChange={this.updateCctWorkPhoneNumber}
 					/>
 				</label>
-				<br />
-				<br />
+	
 				<label>
 					Contact Priority:{' '}
 					<input
 						type="text"
 						id="cctPriority"
-						placeholder="Level 1"
+						placeholder="1, 2, or 3"
 						value={this.state.cctPriority}
 						onChange={this.updateCctPriority}
 					/>
 				</label>
-				<br />
-				<br />
+
+			</section>
 				<button className="contactSubmit" onClick={this.onClick}>
 					Submit Contact
 				</button>
