@@ -25,7 +25,9 @@ class AddContact extends Component {
 	}
 
 updateAllContacts = response => {
+
 	this.props.updateContacts(response)
+
 }
 
 updateCctFirstName = event => {

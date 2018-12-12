@@ -9,8 +9,10 @@ import StudentOptions from './StudentOptions'
 import Assignments from './Assignments'
 
 
+
 import ContactsList from './ContactsList'
 
+import Contacts from './ContactsList'
 
 class Student extends Component {
 	constructor(props) {
@@ -151,6 +153,9 @@ class Student extends Component {
 			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
 			          :this.state.location === 'contacts'
 			          ?<ContactsList contacts={this.state.contacts} studentId={this.props.currentStudent.studentId} updateContacts = {this.updateContacts} />
+
+			          ?<Contacts studentId={this.props.currentStudent.studentId} updateContacts = {this.updateContacts} />
+
 			          : <p> </p>}
 			          	
 			        </StudentContainer>
