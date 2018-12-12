@@ -10,8 +10,8 @@ class MainStudentPage extends Component {
 	     teacherResourceFolders: [],
 	     links: [],
 	     	currentFolder: {
-	     		resourceFolderName: "",
-	     		resourceFolderId: ""
+	     		resourceFolderName: '',
+	     		resourceFolderId: ''
      		}
 
       	}
@@ -39,14 +39,16 @@ class MainStudentPage extends Component {
 				updateFolders={this.updateFolders}
 			/>
 	    	
-	    	<Folder
+	    	{this.state.currentFolder.resourceFolderName !==''
+	    	?<Folder
 	    		links={this.state.links}
 	    		updateLinks={this.updateLinks} 
 	    		updateFolders={this.updateFolders} 
 	    		changeTeacherResourcePage={this.changeTeacherResourcePage}
 	    		currentFolder={this.state.currentFolder}
 	    	/>
-	   		
+	    	:<p></p>
+	   		}
 	   		</section>
 		)	
 	}
