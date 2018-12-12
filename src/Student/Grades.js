@@ -19,7 +19,7 @@ class Grades extends Component{
 	render() {
    		return (
    		<section>
-   		<AllGrades allGrades = {this.state.grades}  currentAssignmentId={this.props.currentAssignment.assignmentId} updateGrades={this.updateGrades}/>
+   		<AllGrades allAssignments = {this.props.assignments} allGrades = {this.state.grades}  currentAssignmentId={this.props.currentAssignment.assignmentId} currentAssignment={this.props.currentAssignment}  updateAssignments = {this.props.updateAssignments} updateGrades={this.updateGrades}/>
    		</section>
 
    	)}		

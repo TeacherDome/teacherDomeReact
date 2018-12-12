@@ -28,7 +28,7 @@ changeAssignment = passAssignment => {
 			<div className="Assigments">
 				<AllAssignments allAssignments = {this.state.assignments} studentId = {this.props.studentId} changeAssignment={this.changeAssignment} updateAssignments = {this.updateAssignments} />
 			 {this.state.currentAssignment.currentAssignmentName !== ''	
-				?<Grades updateAssignments = {this.updateAssignments} currentAssignment={this.state.currentAssignment} changeAssignment={this.changeAssignment}/>
+				?<Grades allAssignments = {this.state.assignments} updateAssignments = {this.updateAssignments} currentAssignment={this.state.currentAssignment} changeAssignment={this.changeAssignment}/>
 				:<p></p>
 				}
 			</div>

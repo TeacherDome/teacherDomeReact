@@ -29,6 +29,21 @@ class AllAssignments extends Component {
 		this.getAssingments()
 	}
 
+	toggleCheck = () => {
+		if (
+			window.confirm(
+				'Are you sure that you would like to delete this assignemnt?'
+			)
+		) {
+			window.confirm(
+				'Wonderful'
+			)
+			
+		}
+	}
+
+	
+
 	render() {
 
 		return (
@@ -42,6 +57,7 @@ class AllAssignments extends Component {
 							}
 						>
 							{assign.assignmentName}
+							<button onClick={this.toggleCheck}>Delete</button>
 						</h2>
 					</section>
 				))}

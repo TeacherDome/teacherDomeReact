@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import api from '../api'
 
 class AddGrade extends Component {
 	constructor(props) {
@@ -14,7 +15,8 @@ class AddGrade extends Component {
 
 	updateNewGrades = response => {
 		this.props.updateGrades(response)
-	}
+		}
+
 
 	updateCriteria = event => {
 		this.setState({ criteria: event.target.value })
@@ -50,6 +52,8 @@ class AddGrade extends Component {
 			.then(res => res.json())
 			.then(grades => this.updateNewGrades(grades))
 	}
+
+
 
 	render() {
 		return (

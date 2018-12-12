@@ -5,6 +5,13 @@ import AddGrade from './AddGrade'
 class AllGrades extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			grade: '',
+			full: '',
+			result: ''
+		}
+
+
 	}
 
 	getGrades = () => {
@@ -18,6 +25,9 @@ class AllGrades extends Component {
 			this.setState({ grades: newGrades })	
 		})
 	}
+
+
+
 
 	componentDidMount() {
 		this.getGrades()
@@ -33,10 +43,11 @@ class AllGrades extends Component {
 						<h2>
 							{grade.criteria}
 						</h2>
-						<p>{grade.studentGrade}{" / "}{grade.fullGrade}</p>
+						<p className="gradeId">{grade.studentGrade}{" / "}{grade.fullGrade}</p>
 					</section>
 				))}
-			<AddGrade updateGrades={this.props.updateGrades} currentAssignmentId = {this.props.currentAssignmentId}/>
+				<p className="totalId"></p>
+			<AddGrade finalGrade={this.finalGrade} allAssignments = {this.props.assignments} updateGrades={this.props.updateGrades} currentAssignmentId = {this.props.currentAssignmentId} updateAssignments = {this.props.updateAssignments}/>
 			</section>
 		)
 	}
