@@ -114,52 +114,51 @@ class Student extends Component {
 	render() {
 		return (
 			<section
-				id="studentSection"
-				key={this.props.currentStudent.studentId}
-			>
-				<p className="name"> {this.props.currentStudent.studentFirstName} { " "}{this.props.currentStudent.studentLastName}</p>
+                id="studentSection"
+                key={this.props.currentStudent.studentId}
+            >
+                <p className="name"> {this.props.currentStudent.studentFirstName} { " "}{this.props.currentStudent.studentLastName}</p>
 
-				 <StudentOptions changeLocation={this.changeLocation} />
-				 <br/>
+                 <StudentOptions changeLocation={this.changeLocation} />
+                 <br/>
 
-			         <StudentContainer>
-			          {this.state.location === 'info'
-			          ?	<section>
-							<UpdateStudent
-								studentId={this.props.currentStudent.studentId}
-								updateStudents={this.props.updateStudents}
-								checkCurrentStudent={this.checkCurrentStudent}
-								currentStudent={this.props.currentStudent}
-							/>
+                     <StudentContainer>
+                      {this.state.location === 'info'
+                      ?    <section>
+                            <UpdateStudent
+                                studentId={this.props.currentStudent.studentId}
+                                updateStudents={this.props.updateStudents}
+                                checkCurrentStudent={this.checkCurrentStudent}
+                                currentStudent={this.props.currentStudent}
+                            />
 
-							<br/>
-							<section className="retireFields">
-							<p>Retire Student
-							<input
-								type="checkbox"
-								id="checkboxChoice"
-								className="retired-box"
-								checked={this.state.studentRetireCheck}
-								onChange={this.toggleCheck}
-							/>
-							</p>
-							</section>
-						</section>
-					 :this.state.location === 'grades'
-			          ?<Assignments studentId={this.props.currentStudent.studentId} />
-			          :this.state.location === 'math'
-			          ?<MathChart studentId={this.props.currentStudent.studentId} />
-			          :this.state.location === 'reading'
-			          ?<ReadingChart studentId={this.props.currentStudent.studentId} />
-			          :this.state.location === 'contacts'
-			          ?<ContactsList contacts={this.state.contacts} studentId={this.props.currentStudent.studentId} updateContacts = {this.updateContacts} />
+                            <br/>
+                            <section className="retireFields">
+                            <p>Retire Student
+                            <input
+                                type="checkbox"
+                                id="checkboxChoice"
+                                className="retired-box"
+                                checked={this.state.studentRetireCheck}
+                                onChange={this.toggleCheck}
+                            />
+                            </p>
+                            </section>
+                        </section>
+                     :this.state.location === 'grades'
+                      ?<Assignments studentId={this.props.currentStudent.studentId} />
+                      :this.state.location === 'math'
+                      ?<MathChart studentId={this.props.currentStudent.studentId} />
+                      :this.state.location === 'reading'
+                      ?<ReadingChart studentId={this.props.currentStudent.studentId} />
+                      :this.state.location === 'contacts'
+                      ?<ContactsList contacts={this.state.contacts} studentId={this.props.currentStudent.studentId} updateContacts = {this.updateContacts} />
+                      : <p> </p>}
+                          
+                    </StudentContainer>
+            </section>
 
-			          ?<Contacts studentId={this.props.currentStudent.studentId} updateContacts = {this.updateContacts} />
 
-			          : <p> </p>}
-			          	
-			        </StudentContainer>
-			</section>
 		)
 	}
 }
