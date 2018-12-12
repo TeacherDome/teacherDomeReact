@@ -8,12 +8,17 @@ class MainStudentPage extends Component {
 		super()
 		this.state = {
 	     teacherResourceFolders: [],
+	     links: [],
 	     	currentFolder: {
-	     		resourceFolderName: "asg",
+	     		resourceFolderName: "",
 	     		resourceFolderId: ""
      		}
 
       	}
+	}
+
+	updateLinks = newLink => {
+		this.setState({links: newLink })
 	}
 
 	updateFolders = newFolder => {
@@ -22,14 +27,26 @@ class MainStudentPage extends Component {
 
 	changeTeacherResourcePage = passedFolder => {
 		this.setState({ currentFolder: passedFolder })
-		console.log("sup")
+		
 	}
 	
 	render(){
 		return (
 			<section className= "MainResourcePage">
-			<TeacherResourcePage teacherResourcePage = {this.state.teacherResourceFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} updateFolders={this.updateFolders} />
-	    	 <Folder updateFolders = {this.updateFolders} changeTeacherResourcePage={this.changeTeacherResourcePage} currentFolder= {this.state.currentFolder} />
+			<TeacherResourcePage 
+				teacherResourcePage={this.state.teacherResourceFolders}
+				changeTeacherResourcePage={this.changeTeacherResourcePage}
+				updateFolders={this.updateFolders}
+			/>
+	    	
+	    	<Folder
+	    		links={this.state.links}
+	    		updateLinks={this.updateLinks} 
+	    		updateFolders={this.updateFolders} 
+	    		changeTeacherResourcePage={this.changeTeacherResourcePage}
+	    		currentFolder={this.state.currentFolder}
+	    	/>
+	   		
 	   		</section>
 		)	
 	}

@@ -4,16 +4,28 @@ class AddContact extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+			cctFirstName: '',
+			cctLastName: '',
+			cctRelationship: '',
+			cctStreet: '',
+			cctCity: '',
+			cctState: '',
+			cctZipCode: '',
+			cctEmail: '',
+			cctCellPhoneNumber: '',
+			cctHomePhoneNumber: '',
+			cctWorkPhoneNumber: '',
+			cctPriority: ''
 		}
 	}
 
 	onClick=()=>{
-		this.AddContact();
+		this.addContact();
 		this.clearFields();
 	}
 
-updateAllContacts = event => {
-	this.setState({ updateAllContacts(response) })
+updateAllContacts = response => {
+	this.props.updateContacts(response)
 }
 
 updateCctFirstName = event => {
@@ -65,7 +77,7 @@ updateCctPriority = event => {
 }
 
 clearFields = () => {
-	this.state.cctFistName = ''
+	this.state.cctFirstName = ''
 	this.state.cctLastName = ''
 	this.state.cctRelationship = ''
 	this.state.cctStreet = ''
@@ -80,10 +92,9 @@ clearFields = () => {
 }
 
 addContact = () => {
-	fetch('/api/students/addContact', {
-		method: 'post',
-		body:JSON.stringify({
-			contactFirstName: this.state.cctFistName,
+	const that = this
+	const contactInfo = {
+			contactFirstName: this.state.cctFirstName,
 			contactLastName: this.state.cctLastName,
 			contactRelationship: this.state.cctRelationship,
 			contactStreet: this.state.cctStreet,
@@ -94,11 +105,16 @@ addContact = () => {
 			contactCellPhoneNumber: this.state.cctCellPhoneNumber,
 			contactHomePhoneNumber: this.state.cctHomePhoneNumber,
 			contactWorkPhoneNumber: this.state.cctWorkPhoneNumber,
-			contactPriority: this.state.cctPriority
-		})
+			contactPriority: this.state.cctPriority,
+			contactStudentId: this.props.contactStudentId
+		}
+		console.log(contactInfo)
+	fetch('/api/ContactPage/addContact', {
+		method: 'post',
+		body:JSON.stringify(contactInfo)
 	})
 	.then(res => res.json())
-	.then(contacts => this.updateAllContacts(contacts))
+	.then(contacts => that.props.updateContacts(contacts))
 }
 
 render() {
@@ -106,16 +122,14 @@ render() {
 		<section className="add-contact">
 		<h1>Add New Contact</h1>
 		<label>
-					First Name:{' '}
-					<br />
-					<input
-						type="text"
-						name="contactFirstName"
-						id="cctFirstName"
-						placeholder="Alex"
-						required
-						value={this.state.cctFirstName}
-						onChange={this.updateCctFirstName}
+			First Name:{' '}
+			<br />
+			<input
+				type="text"
+				id="cctFirstName"
+				placeholder="Alex"
+				value={this.state.cctFirstName}
+				onChange={this.updateCctFirstName}
 					/>
 				</label>
 				<br />
@@ -125,10 +139,8 @@ render() {
 					<br />
 					<input
 						type="text"
-						name="contactLastName"
 						id="cctLastName"
 						placeholder="Smith"
-						required
 						value={this.state.cctLastName}
 						onChange={this.updateCctLastName}
 					/>
@@ -139,10 +151,8 @@ render() {
 					Relationship to Student:{' '}
 					<input
 						type="text"
-						name="contactRelationship"
 						id="cctRelationship"
 						placeholder="mother"
-						required
 						value={this.state.cctRelationship}
 						onChange={this.updateCctRelationship}
 					/>
@@ -153,10 +163,8 @@ render() {
 					Street:{' '}
 					<input
 						type="text"
-						name="contactStreet"
 						id="cctStreet"
 						placeholder="123 Abc St."
-						required
 						value={this.state.cctStreet}
 						onChange={this.updateCctStreet}
 					/>
@@ -167,10 +175,8 @@ render() {
 					City:{' '}
 					<input
 						type="text"
-						name="contactCity"
 						id="cctCity"
 						placeholder="Columbus"
-						required
 						value={this.state.cctCity}
 						onChange={this.updateCctCity}
 					/>
@@ -181,10 +187,8 @@ render() {
 					State:{' '}
 					<input
 						type="text"
-						name="contactState"
 						id="cctState"
 						placeholder="Ohio"
-						required
 						value={this.state.cctState}
 						onChange={this.updateCctState}
 					/>
@@ -195,10 +199,8 @@ render() {
 					Zip Code:{' '}
 					<input
 						type="text"
-						name="contactZipCode"
 						id="schoolId"
 						placeholder="43210"
-						required
 						value={this.state.cctZipCode}
 						onChange={this.updateCctZipCode}
 					/>
@@ -209,10 +211,8 @@ render() {
 					Email:{' '}
 					<input
 						type="text"
-						name="contactEmail"
 						id="cctEmail"
 						placeholder="example@gmail.com"
-						required
 						value={this.state.cctEmail}
 						onChange={this.updateCctEmail}
 					/>
@@ -223,10 +223,8 @@ render() {
 					Cell Phone:{' '}
 					<input
 						type="text"
-						name="contactCellPhoneNumber"
 						id="cctCellPhoneNumber"
 						placeholder="xxx-xxx-xxxx"
-						required
 						value={this.state.cctCellPhoneNumber}
 						onChange={this.updateCctCellPhoneNumber}
 					/>
@@ -237,10 +235,8 @@ render() {
 					Home Phone:{' '}
 					<input
 						type="text"
-						name="contactHomePhoneNumber"
 						id="cctHomePhoneNumber"
 						placeholder="xxx-xxx-xxxx"
-						required
 						value={this.state.cctHomePhoneNumber}
 						onChange={this.updateCctHomePhoneNumber}
 					/>
@@ -251,10 +247,8 @@ render() {
 					Work Phone:{' '}
 					<input
 						type="text"
-						name="contactWorkPhoneNumber"
 						id="cctWorkPhoneNumber"
 						placeholder="xxx-xxx-xxxx"
-						required
 						value={this.state.cctWorkPhoneNumber}
 						onChange={this.updateCctWorkPhoneNumber}
 					/>
@@ -265,10 +259,8 @@ render() {
 					Contact Priority:{' '}
 					<input
 						type="text"
-						name="contactPriority"
 						id="cctPriority"
 						placeholder="Level 1"
-						required
 						value={this.state.cctPriority}
 						onChange={this.updateCctPriority}
 					/>

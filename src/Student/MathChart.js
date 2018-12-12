@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
-import api from '../api'
+import AddMath from './AddMath'
 
 class MathChart extends Component{
 	constructor(props){
@@ -16,24 +16,29 @@ class MathChart extends Component{
 		console.log()
 	}
 
-	getChartData(){
-		let mathScores = [];
-		let mathDates = [];
-		api(`http://localhost:8080/api/math-scores`)
-		.then(scores => {
-			scores.forEach( score => {
-				if(score.student.studentId == this.props.studentId) {
-					mathScores.push(score.score);
-					mathDates.push(score.date);
-				}
-			});
-		});
+	getChartData = () => {
+		let scoresOnChart = [];
+		let datesOnChart = [];
+		fetch(`http://localhost:8080/api/math-scores`, {
+			method: 'PUT',
+			body: JSON.stringify({
+				studentId: this.props.studentId
+			})
+		})
+		.then(res => res.json())
+		.then(mathScores => {
+			mathScores.forEach( mathScore => {
+				scoresOnChart.push(mathScore.score);
+				datesOnChart.push(mathScore.date);
+				})
+			})
+		console.log(this.props.studentId)
 
 		this.setState({
 			chartData:{
-				labels:mathDates,
+				labels:datesOnChart,
 				datasets:[{
-		            data: mathScores,
+		            data: scoresOnChart,
 		            backgroundColor: [
 		                'rgba(54, 162, 235, 0.2)',
 		            ],
@@ -64,6 +69,7 @@ class MathChart extends Component{
    						}
    					}}
    				/>
+				<AddMath getChartData={this.getChartData} studentId={this.props.studentId} />
    			</div>
 
    	)}		
