@@ -4,26 +4,43 @@ class AddMath extends Component{
 	constructor(props){
 		super(props)
 		this.state = {
+			mathScoreFromForm: '',
+			mathDateFromForm: '',
 		}
 	}
 
+
 	submitMathData = () => {
-		const that = this
-		const mathDateFromForm = document.querySelector('#submit-math-date').value;
-		const mathScoreFromForm = document.querySelector('#submit-math-score').value;
 		const fetchThisId = this.props.studentId;
 
 		fetch(`http://localhost:8080/api/student/add-math-score`, {
 			method: 'POST',
 			body: JSON.stringify({
-				date: mathDateFromForm,
-				score: mathScoreFromForm,
+				date: this.state.mathDateFromForm,
+				score: this.state.mathScoreFromForm,
 				studentId: fetchThisId
 			})
 		})
-		 this.props.getChartData()
+
+		this.props.getChartData();
+		this.clearFields();
+
 	}
 
+	updateMathDate = event => {
+		this.setState({ mathDateFromForm: event.target.value })
+	}
+
+	updateMathScore = event => {
+		this.setState({ mathScoreFromForm: event.target.value })
+	}
+	
+	clearFields(){
+		this.setState({
+			mathScoreFromForm:  '',
+			mathDateFromForm: '',
+		})
+	}
 
 	render(){
 		return(
@@ -33,7 +50,8 @@ class AddMath extends Component{
 					<input
 						type="text"
 						id="submit-math-date"
-						required
+						value={this.state.mathDateFromForm}
+						onChange={this.updateMathDate}
 					/>
 				</label>
 				<label>
@@ -41,7 +59,8 @@ class AddMath extends Component{
 					<input
 						type="text"
 						id="submit-math-score"
-						required
+						value={this.state.mathScoreFromForm}
+						onChange={this.updateMathScore}
 					/>
 				</label>
 				<button className="studentSubmit" onClick={this.submitMathData}>

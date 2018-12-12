@@ -6,10 +6,9 @@ class MathChart extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			chartData: {},
-			test: ''
+			chartData: {}
 		}
-		this.getChartData()
+
 	}
 
 	componentDidMount(){
@@ -20,7 +19,7 @@ class MathChart extends Component{
 		const that = this
 		let scoresOnChart = [];
 		let datesOnChart = [];
-		fetch(`http://localhost:8080/api/math-scores`, {
+		return fetch(`/api/math-scores`, {
 			method: 'PUT',
 			body: JSON.stringify({
 				studentId: this.props.studentId
@@ -38,11 +37,11 @@ class MathChart extends Component{
 					datasets:[{
 						data: scoresOnChart,
 						backgroundColor: [
-						'rgba(54, 162, 235, 0.2)',
+							'rgba(54, 162, 235, 0.2)',
 						],
 						borderColor: [
-						'rgba(54, 162, 235, 1)',
-						],
+							'rgba(54, 162, 235, 1)',
+						]
 					}]
 				}
 			})
@@ -59,7 +58,7 @@ class MathChart extends Component{
 					options={{
 						title: {
 							display:true,
-							text:'Math Scores',
+							text:'Math Progress',
 							fontSize:40
 						},
 						legend: {
