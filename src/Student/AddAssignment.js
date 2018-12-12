@@ -39,8 +39,8 @@ class AddAssignment extends Component {
 
 	render() {
 		return (
-			<section className="add-student">
-				<h1>New Assignment</h1>
+			<section className="add-assignment">
+				<h1>Add New Assignment</h1>
 				<label>
 					New Assignment Name:{' '}
 					<br />

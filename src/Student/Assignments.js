@@ -25,7 +25,7 @@ changeAssignment = passAssignment => {
 	}
 	render() {
 		return (
-			<div className="Assigments">
+			<div className="assigments">
 				<AllAssignments allAssignments = {this.state.assignments} studentId = {this.props.studentId} changeAssignment={this.changeAssignment} updateAssignments = {this.updateAssignments} />
 			 {this.state.currentAssignment.currentAssignmentName !== ''	
 				?<Grades allAssignments = {this.state.assignments} updateAssignments = {this.updateAssignments} currentAssignment={this.state.currentAssignment} changeAssignment={this.changeAssignment}/>

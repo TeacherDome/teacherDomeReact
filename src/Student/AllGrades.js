@@ -36,8 +36,8 @@ class AllGrades extends Component {
 	render() {
 
 		return (
-			<section className="class-list">
-				<h2 className="class-list-header"> Grades  </h2>
+			<section className="grade-list">
+				<h2 className="grade-list-header"> Grades  </h2>
 				{this.props.allGrades.map((grade, index) => (
 					<section className="studentInList" key={index}>
 						<h2>

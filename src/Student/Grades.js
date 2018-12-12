@@ -18,7 +18,7 @@ class Grades extends Component{
 
 	render() {
    		return (
-   		<section>
+   		<section className="assignments">
    		<AllGrades allAssignments = {this.props.assignments} allGrades = {this.state.grades}  currentAssignmentId={this.props.currentAssignment.assignmentId} currentAssignment={this.props.currentAssignment}  updateAssignments = {this.props.updateAssignments} updateGrades={this.updateGrades}/>
    		</section>
 

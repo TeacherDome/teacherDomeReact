@@ -29,26 +29,14 @@ class AllAssignments extends Component {
 		this.getAssingments()
 	}
 
-	toggleCheck = () => {
-		if (
-			window.confirm(
-				'Are you sure that you would like to delete this assignemnt?'
-			)
-		) {
-			window.confirm(
-				'Wonderful'
-			)
-			
-		}
-	}
 
 	
 
 	render() {
 
 		return (
-			<section className="class-list">
-				<h2 className="class-list-header"> Assignment List </h2>
+			<section className="assignment-list">
+				<h2 className="assignment-list-header"> Assignment List </h2>
 				{this.props.allAssignments.map((assign, index) => (
 					<section className="studentInList" key={index}>
 						<h2
@@ -57,7 +45,6 @@ class AllAssignments extends Component {
 							}
 						>
 							{assign.assignmentName}
-							<button onClick={this.toggleCheck}>Delete</button>
 						</h2>
 					</section>
 				))}
