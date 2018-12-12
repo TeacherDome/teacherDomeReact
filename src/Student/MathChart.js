@@ -7,16 +7,17 @@ class MathChart extends Component{
 		super(props);
 		this.state = {
 			chartData: {},
-			studentId: ''
+			test: ''
 		}
+		this.getChartData()
 	}
 
-	componentWillMount(){
+	componentDidMount(){
 		this.getChartData();
-		console.log()
 	}
 
 	getChartData = () => {
+		const that = this
 		let scoresOnChart = [];
 		let datesOnChart = [];
 		fetch(`http://localhost:8080/api/math-scores`, {
@@ -28,52 +29,49 @@ class MathChart extends Component{
 		.then(res => res.json())
 		.then(mathScores => {
 			mathScores.forEach( mathScore => {
-				scoresOnChart.push(mathScore.score);
 				datesOnChart.push(mathScore.date);
-				})
+				scoresOnChart.push(mathScore.score);
 			})
-		console.log(this.props.studentId)
-
-		this.setState({
-			chartData:{
-				labels:datesOnChart,
-				datasets:[{
-		            data: scoresOnChart,
-		            backgroundColor: [
-		                'rgba(54, 162, 235, 0.2)',
-		            ],
-		            borderColor: [
-		                'rgba(54, 162, 235, 1)',
-		            ],
-
-				}]
-			}
+			that.setState({
+				chartData:{
+					labels:datesOnChart,
+					datasets:[{
+						data: scoresOnChart,
+						backgroundColor: [
+						'rgba(54, 162, 235, 0.2)',
+						],
+						borderColor: [
+						'rgba(54, 162, 235, 1)',
+						],
+					}]
+				}
+			})
 		})
 	}
 
 
 	render() {
-   		return (
-   			<div>
-   				<Line
-   					data={this.state.chartData}
-   					width={400}
-   					options={{
-   						title: {
-	   						display:true,
-	   						text:'Math Scores',
-	   						fontSize:40
-   						},
-   						legend: {
-   							display:false
-   						}
-   					}}
-   				/>
+		return (
+			<div>
+				<Line
+					data={this.state.chartData}
+					width={400}
+					options={{
+						title: {
+							display:true,
+							text:'Math Scores',
+							fontSize:40
+						},
+						legend: {
+							display:false
+						}
+					}}
+				/>
 				<AddMath getChartData={this.getChartData} studentId={this.props.studentId} />
-   			</div>
-
-   	)}		
+			</div>
+		)
+	}		
 }
 
-export default MathChart
+	export default MathChart
 

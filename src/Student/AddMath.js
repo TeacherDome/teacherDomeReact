@@ -4,12 +4,7 @@ class AddMath extends Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			studentId: ''
 		}
-	}
-
-	getChartData(passedData) {
-		this.props.getChartData(passedData)
 	}
 
 	submitMathData = () => {
@@ -26,8 +21,7 @@ class AddMath extends Component{
 				studentId: fetchThisId
 			})
 		})
-		.then(res => res.json())
-		.then(newMathdata => that.getChartData(newMathdata))
+		 this.props.getChartData()
 	}
 
 
@@ -40,7 +34,6 @@ class AddMath extends Component{
 						type="text"
 						id="submit-math-date"
 						required
-						// onChange={this.updateLastName}
 					/>
 				</label>
 				<label>
@@ -49,7 +42,6 @@ class AddMath extends Component{
 						type="text"
 						id="submit-math-score"
 						required
-						// onChange={this.updateSchoolId}
 					/>
 				</label>
 				<button className="studentSubmit" onClick={this.submitMathData}>
