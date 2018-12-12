@@ -13,6 +13,9 @@ class MainStudentPage extends Component {
 	     		resourceFolderName: "",
 	     		resourceFolderId: ""
      		}
+     		currentLink {
+     			folder: ""
+     		}
 
       	}
 	}
