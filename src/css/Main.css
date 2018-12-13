@@ -5,13 +5,16 @@
   	margin: 0;
   	padding: 0;
 	background-image: url('../images/wildtextures-handmade-warm-flower-paper3.jpg');
-	background-position: center;
- 	background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    min-height: 100vh; 
  	
 }
 
 
 .castle{
-height:70%;
+height:100%;
 width: 70%;
 }
+
